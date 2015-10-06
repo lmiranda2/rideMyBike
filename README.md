@@ -1,2 +1,2 @@
 # rideMyBike
-Loyola University Chicago - COMP424 - Fall 2015 - Final Project
+Loyola University Chicago - Fall 2015 - COMP424 - Final Project
