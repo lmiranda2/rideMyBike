@@ -52,6 +52,6 @@ section.search-form {
 	border-bottom: 1px solid #dedede;
 }
 
-#location {
+#autocomplete {
 	width: 400px;
 }
