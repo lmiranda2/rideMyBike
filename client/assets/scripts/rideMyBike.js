@@ -21,22 +21,59 @@ function rideMyBike() {
 				var bicycle = bicycles[i];
 
 				var $bicycleDiv = $('<div/>');
-				$bicycleDiv.addClass('div-img');
+				$bicycleDiv.addClass('div-img col');
 
+				// Blurry background begin
 				var $blurryDiv = $('<div/>');
 				$blurryDiv.addClass('blurry');
-
 				$blurryDiv.css('background', 'url(' + bicycle.pictureUrl + ')');
+				$blurryDiv.appendTo($bicycleDiv);
+				// Blurry background end
 				
+				// Bicycle picture begin
 				var $img = $('<img/>');
 				$img.attr('src', bicycle.pictureUrl);
-
-				var $pNicknameCanDeliver = $('<p></p>');
-				$pNicknameCanDeliver.text(bicycle.nickname);
-
-				$blurryDiv.appendTo($bicycleDiv);
 				$img.appendTo($bicycleDiv);
-				$pNicknameCanDeliver.appendTo($bicycleDiv);
+				// Bicycle picture end
+
+				// Bicycle information begin
+				var $nickname = $('<span></span>');
+				$nickname.text(bicycle.nickname);
+
+				var $type = $('<span></span>');
+				$type.text(bicycle.type);
+
+				var $model = $('<span></span>');
+				$model.text(bicycle.model);
+
+				var $frameSize = $('<span></span>');
+				$frameSize.text(bicycle.frameSize);
+
+				var $wheelSize = $('<span></span>');
+				$wheelSize.text(bicycle.wheelSize);
+
+				// Rating stars begin
+				var rating = Math.round((parseInt(bicycle.bicycleRating)/10)*100);
+
+				var $ratingBarDiv = $('<div/>');
+				$ratingBarDiv.addClass('rating_bar');
+
+				var $ratingDiv = $('<div/>');
+				$ratingDiv.addClass('rating');
+				$ratingDiv.attr('style', 'width:' + rating + '%');
+				$ratingDiv.attr('title', rating + '%');
+				$ratingDiv.appendTo($ratingBarDiv);
+				// Rating stars end
+
+				var $canDeliver = $('<span></span>');
+				$canDeliver.text(bicycle.canDeliver);
+				// Bicycle information end
+
+				var $captionDiv = $('<div/>');
+				// $nickname.appendTo($captionDiv);
+				// $tanDeliver.appendTo($captionDiv);
+				$ratingBarDiv.appendTo($bicycleDiv);
+				// $captionDiv.appendTo($bicycleDiv);
 
 				$('#search-results').append($bicycleDiv);
 			}

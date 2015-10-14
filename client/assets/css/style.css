@@ -1,8 +1,8 @@
 body {
 	min-width: 436px;
-	max-width: 1440px;
+	max-width: 1800px;
 	margin: auto;
-	background: linear-gradient(rgba(1, 0, 0, 0.3), rgba(10, 15, 0, 1));
+	background: #1E212F;
 	background-position: center center;
 	background-repeat: none;
 	background-size: cover;
@@ -14,7 +14,7 @@ body {
 /* site main content category */
 main {
   overflow: auto;
-  padding: 200px 0 5px 0;
+  padding: 200px 0 30px 0;
   text-align: center;
 }
 
@@ -36,13 +36,12 @@ button {
 
 /* site footer */
 footer {
-	max-width: 1440px;
+	max-width: 1800px;
 	left: 0;
 	right: 0;
 	margin: auto;
 	text-align: center;
 	padding-bottom: 15px;
-	border-top: 1px solid #dedede;
 }
 
 a {
@@ -57,7 +56,7 @@ a.align-right {
 
 section.search-form {
 	padding: 2px;
-	padding-bottom: 20px;
+	padding-bottom: 100px;
   	margin-left: 5px;
   	border-radius: 0;
 }
@@ -69,69 +68,93 @@ section.search-form {
 input[type="date"] {
 	border: none;
 }
-/*=================================*/
-#search-results {
-   -webkit-column-count: 4;
-   -webkit-column-gap:   0px;
-   -moz-column-count:    4;
-   -moz-column-gap:      0px;
-   column-count:         4;
-   column-gap:           0px;
-}
-
+/*Begin grid cell configuration*/
 #search-results .div-img {
     /* Just in case there are inline attributes */
-    margin-left: 1px;
-    margin-bottom: 1px;
-    border: .5px solid gray;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-    width: 100%;
-    display: inline-block;
+	display: inline-block;
     position: relative;
-    padding: 1px;
     cursor: pointer;
+    height: 250px;
 }
 
 .blurry {
 	background-repeat: none;
 	background-size: cover;
-	-webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -ms-filter: blur(10px);
-    -o-filter: blur(10px);
-    filter: blur(10px);
+	-webkit-filter: brightness(80%) contrast(80%) blur(8px);
+    -moz-filter: brightness(80%) contrast(80%) blur(8px);
+    -ms-filter: brightness(80%) contrast(80%) blur(8px);
+    -o-filter: brightness(80%) contrast(80%) blur(8px);
+    filter: brightness(80%) contrast(80%) blur(8px);
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	z-index: -1;
 }
 
-#search-results p {
+/*#search-results span {
    	position: absolute;
-   	top: 120px; 
-   	left: 5px;
+   	top: 180px; 
+   	left: 10px;
    	color: #dde;
+}
+*//*End grid cell configuration*/
+
+/*Begin grid configuration*/
+.grid {
+	margin: 0 0 20px 0;
+}
+
+.col {
+	width: 25%;
+	float: left;
 }
 
 @media (max-width: 1428px) {
-  #search-results {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
-  }
+	.col {
+		width: 33%;
+	}
 }
 @media (max-width: 1080px) {
-  #search-results {
-  -moz-column-count:    2;
-  -webkit-column-count: 2;
-  column-count:         2;
-  }
+	.col {
+  		width: 50%;
+  	}
 }
 @media (max-width: 720px) {
-  #search-results {
-  -moz-column-count:    1;
-  -webkit-column-count: 1;
-  column-count:         1;
-  }
+ 	.col {
+  		width: 100%;
+  	}
 }
-/*=================================*/
+/*End grid configuration*/
+
+/*Begin Star rating*/
+.rating_bar {
+	position: relative;
+	top: -250px;
+	left: 315px;
+    /*this class creats 5 stars bar with empty stars */
+    /*each star is 16 px, it means 5 stars will make 80px together */
+    width: 80px;
+    /*height of empty star*/
+    height: 16px;
+    /*background image with stars */
+    background: url(../img/stars.png);
+    /*which will be repeated horizontally */
+    background-repeat: repeat-x;
+    /* as we are using sprite image, we need to position it to use right star, 
+    //0 0 is for empty */
+    background-position: 0 0;
+    /* align inner div to the left */
+    text-align: left;
+}
+.rating {
+    /* height of full star is the same, we won't specify width here */
+    height: 16px;
+    /* background image with stars */
+    background: url(../img/stars.png);
+    /* now we will position background image to use 16px from top, 
+    //which means use full stars */
+    background-position: 0 -16px;
+    /* and repeat them horizontally */
+    background-repeat: repeat-x;
+}
+/*End Star rating*/
