@@ -1,0 +1,66 @@
+jsonCallback({
+	"bicycles":
+		[
+			{
+				"pictureUrl": "mocks/img/mountain_01.jpg",
+				"nickname": "La Poderosa",
+				"ẗype": "Mountain",
+				"model": "2013 Felt Compulsive",
+				"frameSize": "M",
+				"wheelSize": "29\"",
+				"canDeliver": false,
+				"bicycleRating": "10"
+			},
+			{
+				"pictureUrl": "mocks/img/fixie_02.jpg",
+				"nickname": "Beyonce",
+				"ẗype": "Fixed Gear",
+				"model": "1949 Hercules Kestrel",
+				"frameSize": "S",
+				"wheelSize": "700c",
+				"canDeliver": false,
+				"bicycleRating": "6"
+			},
+			{
+				"pictureUrl": "mocks/img/road_01.jpg",
+				"nickname": "Edie",
+				"ẗype": "Road",
+				"model": "1964 Raleigh Sports",
+				"frameSize": "XX",
+				"wheelSize": "700c",
+				"canDeliver": true,
+				"bicycleRating": "8"
+			},
+			{
+				"pictureUrl": "mocks/img/mountain_02.jpg",
+				"nickname": "Wasp",
+				"ẗype": "Mountain",
+				"model": "Gary Fischer Marlin",
+				"frameSize": "M",
+				"wheelSize": "26\"",
+				"canDeliver": false,
+				"bicycleRating": "9"
+			},
+			{
+				"pictureUrl": "mocks/img/fixie_01.jpg",
+				"nickname": "Golden Boy",
+				"ẗype": "Fixed Gear",
+				"model": "2011 Linus Mixte",
+				"frameSize": "L",
+				"wheelSize": "700c",
+				"canDeliver": false,
+				"bicycleRating": "10"
+			},
+			{
+				"pictureUrl": "mocks/img/mountain_03.jpg",
+				"nickname": "Rainmaker",
+				"ẗype": "Mountain",
+				"model": "Giant Excursion",
+				"frameSize": "Jumbo",
+				"wheelSize": "26\"",
+				"canDeliver": true,
+				"bicycleRating": "10"
+			},
+			
+		]
+	});
