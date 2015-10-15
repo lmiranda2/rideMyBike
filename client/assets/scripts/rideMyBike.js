@@ -24,11 +24,11 @@ function rideMyBike() {
 				$bicycleDiv.addClass('div-img col');
 
 				// Blurry background begin
-				/*var $blurryDiv = $('<div/>');
+				var $blurryDiv = $('<div/>');
 				$blurryDiv.addClass('blurry');
 				$blurryDiv.css('background', 'url(' + bicycle.pictureUrl + ')');
 				$blurryDiv.appendTo($bicycleDiv);
-				// Blurry background end*/
+				// Blurry background end
 				
 				// Bicycle picture begin
 				var $img = $('<img class="thumb"/>');

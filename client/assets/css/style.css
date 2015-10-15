@@ -11,9 +11,11 @@ body {
 	font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
 	margin: 0;
 }
+
 h1{
     margin: 15px 0 ;
 }
+
 header{
 	background-color: rgb(255, 255, 255);
 	box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
@@ -22,12 +24,13 @@ header{
 	display: block;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	height: 63px;
+	height: 57px;
 	position: relative;
 	width: 99vw;
 	left: 0;
 	right: 0;
 }
+
 .content{
 	position: relative;
 	margin: 0 auto;
@@ -42,24 +45,13 @@ main {
   text-align: center;
 }
 
-.main-nav {
-	padding-top: 15px;
-}
-
 .footer-nav {
 	padding-top: 5px;
 	color: rgb(117, 117, 117);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     margin: 20px 15px;
-}
 
-button {
-  padding: 2px;
-  margin-left: 5px;
-  border-radius: 0;
-  border: 1px solid #dedede;
-  cursor: pointer;
 }
 
 /* site footer */
@@ -73,9 +65,14 @@ footer {
 }
 
 a {
+	color: rgb(117, 117, 117);;
 	text-decoration: none;
 	margin-right: 10px;
-	//color: white;
+}
+
+a:visited {
+	color: rgb(117, 117, 117);
+	text-decoration: none;
 }
 
 a.align-right {
@@ -96,10 +93,16 @@ section.search-form {
 input[type="date"] {
 	border: none;
 }
+
+#search-results {
+	width: 99vw;
+}
+
 /*Begin grid cell configuration*/
 #search-results .div-img {
     /* Just in case there are inline attributes */
 	display: inline-block;
+	margin: 5px 0px 0px 0px;
     position: relative;
     cursor: pointer;
     height: 250px;
@@ -118,7 +121,7 @@ input[type="date"] {
 	display:block;
 }
 
-.blurryq {
+.blurry {
 	background-repeat: none;
 	background-size: cover;
 	-webkit-filter: brightness(80%) contrast(80%) blur(8px);
@@ -131,14 +134,7 @@ input[type="date"] {
 	position: absolute;
 	z-index: -1;
 }
-
-/*#search-results span {
-   	position: absolute;
-   	top: 180px; 
-   	left: 10px;
-   	color: #dde;
-}
-*//*End grid cell configuration*/
+/*End grid cell configuration*/
 
 /*Begin grid configuration*/
 .grid {
@@ -150,12 +146,12 @@ input[type="date"] {
 	float: left;
 }
 
-@media (max-width: 1428px) {
+@media (max-width: 1628px) {
 	.col {
-		width: 25%;
+		width: 33%;
 	}
 }
-@media (max-width: 1080px) {
+@media (max-width: 1300px) {
 	.col {
   		width: 50%;
   	}
@@ -166,15 +162,11 @@ input[type="date"] {
   	}
 }
 /*End grid configuration*/
-.div-img
-{
-	margin: 15px 0px 15px 0px;
-
-}
 
 button {
+	vertical-align: top;
+	height: 46px;
 	padding: 0 18px;
-	height: 48px;
 	font-size: 12px;
 	font-weight: bold;
 	color: #527881;
@@ -183,7 +175,6 @@ button {
 	border: 1px solid;
 	border-color: #b4ccce #b3c0c8 #9eb9c2;
     margin-bottom: -1px;
-	//border-radius: 16px;
 	outline: 0;
 	@include box-sizing(content-box); // Firefox sets this to border-box by default
 	@include linear-gradient(top, #edf5f8, #cde5ef);
@@ -231,11 +222,11 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 	 outline-offset: 0; // WebKit sets this to -1 by default
  }
 
-.thumb{
+.thumb {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
-	border: 2px solid gray;
+	border: 1px solid gray;
 }
 
 .main-menu {
@@ -265,17 +256,22 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 .back-image{
-    background-image: url("../img/background.jpg");
-    display: inline-flex;
-    background-size: 100vw 400px;
+    background-image: url("../img/background1.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    width: 99vw;
     box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.870588);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
-    height: 400px;
+    display: inline-flex;
+
+    /*
+    background-size: 100vw 400px;
+    color: rgba(0, 0, 0, 0.870588);
     line-height: 21px;
-    width: 99vw;
     z-index: auto;
+    */
 }
 
 /*Begin Star rating*/
