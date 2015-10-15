@@ -1,80 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>rideMyBike - Where you can ride by sharing</title>
     <meta name="description" content="Web platform for sharing bicycles around the country">
     <meta name="author" content="">
     <!-- css styles... -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  </head>
-  <body>
-    <!-- document header -->
-    <header>
-    </header>
+</head>
+<body>
+<!-- document header -->
+<header>
+    <div class="logo">
+        <a href="#" class="align-left">rideMyBike</a>
+    </div>
     <!-- document nav -->
-    <nav>
-      <a href="#" class="align-left">rideMyBike</a>
-      <a href="#" class="align-right">Login</a>
-      <a href="#" class="align-right">Sign Up</a>
-      <a href="#" class="align-right">How it Works</a>
+    <nav class="main-menu">
+        <div class="align-right">
+            <a href="#" class="">Login</a>
+            <a href="#" class="">Sign Up</a>
+            <a href="#" class="">How it Works</a>
+        </div>
     </nav>
-    <!-- document main -->
-    <main>
-      <h3>Find a bicycle to borrow</h3>
-      <!-- note input -->
-      <section class="search-form">
-        <input id="autocomplete" type="search" placeholder="Location">
-        <input type="date">
-        <input type="date">
-        <button>Search</button>
-      </section>
-      <!-- search results -->
-      <section class="search-results">
-        <table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
-      </section>
-    </main>
-    <!-- document footer -->
-    <footer>
-      <nav>
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
-        <a href="#">How it Works</a>
+</header>
+
+<!-- document main -->
+<main>
+    <div class="back-image">
+        <div class="search-area">
+            <h1>Find a bicycle to borrow</h1>
+            <!-- note input -->
+            <section class="search-form">
+                <input id="autocomplete" type="search" placeholder="Location" required>
+                <input type="date" required>
+                <input type="date" required>
+                <input id="street_number" hidden="true">
+                <input id="route" hidden="true">
+                <input id="locality" hidden="true">
+                <input id="administrative_area_level_1" hidden="true">
+                <input id="postal_code" hidden="true">
+                <input id="country" hidden="true">
+                <button>Search</button>
+            </section>
+        </div>
+    </div>
+    <!-- search results -->
+    <section id="search-results" class="grid">
+    </section>
+</main>
+<!-- document footer -->
+<footer>
+    <nav class="footer-nav">
+        <a href="#">Login</a> <strong>|</strong>
+        <a href="#">Sign Up</a> <strong>|</strong>
+        <a href="#">How it Works</a> <strong>|</strong>
         <a href="#">Twitter</a>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-      </nav>
-    </footer>
-    <!-- js scripts... -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
-    <script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
-  </body>
+    </nav>
+</footer>
+<!-- Remove - Mockup script -->
+<script type="text/javascript" src="assets/scripts/mockup.js"></script>
+<!-- end of Remove - Mockup script -->
+
+<!-- js scripts... -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
+<script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async
+        defer></script>
+</body>
 </html>
