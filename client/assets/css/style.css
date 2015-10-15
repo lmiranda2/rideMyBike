@@ -306,3 +306,90 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
     background-repeat: repeat-x;
 }
 /*End Star rating*/
+
+/* Bike Details*/
+.bike-images{
+    float: left;
+    width: 48vw;
+    min-height: 60vh;
+}
+.bike-details{
+    float: right;
+    width: 48vw;
+    min-height: 60vh;
+}
+
+.bike-main{
+    display: inline-block;
+    width: 99vw;
+}
+
+.bike-borrow-date{
+    line-height: 12px;
+    height: 14px;
+    font-size: 14px;
+    width: 80px !important;
+}
+
+.bike-dates i {
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.bike-contact-owner{
+    margin-top: 15px;
+}
+
+.bike-images-current{
+    width: 80%;
+    height: 40vh;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 2px solid gray;
+    margin: 30px auto;
+    background-image: url("mocks/img/road_01.jpg");
+     background-repeat: no-repeat;
+    /* as we are using sprite image, we need to position it to use right star, 
+    //0 0 is for empty */
+    background-position: 0 0;
+}
+
+.bike-images-galery-thumb{
+     width: 20%;
+    height: 10vh;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 2px solid gray;
+    margin: 5px;
+    display:inline-block;
+    margin: auto;
+}
+
+.bike-images-galery i {
+    vertical-align: middle;
+    margin-bottom: 10vh;
+}
+
+.bike-comments-rating{
+    display:inline-block;
+    margin: 30px;
+}
+
+.bike-comments-rating h4,
+.bike-comments-rating i{
+      text-align: left;
+    margin: 0;
+
+}
+
+.bike-comment-individual{
+   text-align: left;
+   
+}
+
+.horizontal-line{
+     border-top: 2px solid black;
+     margin-bottom: 20px;
+}
