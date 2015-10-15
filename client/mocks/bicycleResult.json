@@ -9,7 +9,7 @@ jsonCallback({
 				"frameSize": "M",
 				"wheelSize": "29\"",
 				"canDeliver": false,
-				"bicycleRating": "10"
+				"bicycleRating": "5"
 			},
 			{
 				"pictureUrl": "mocks/img/fixie_02.jpg",
@@ -47,7 +47,7 @@ jsonCallback({
 				"ẗype": "Fixed Gear",
 				"model": "2011 Linus Mixte",
 				"frameSize": "L",
-				"wheelSize": "700c",
+				"wheelSize": "700c",	
 				"canDeliver": false,
 				"bicycleRating": "10"
 			},
@@ -59,8 +59,7 @@ jsonCallback({
 				"frameSize": "Jumbo",
 				"wheelSize": "26\"",
 				"canDeliver": true,
-				"bicycleRating": "10"
+				"bicycleRating": "7.5"
 			},
-			
 		]
 	});

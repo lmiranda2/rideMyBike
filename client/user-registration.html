@@ -1,77 +1,106 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Registration Form</title>
-  <link rel="stylesheet" href="assets/css/style1.css">
+    <meta charset="utf-8">
+    <title>User registration - rideMyBike</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-  <h1>User Registration</h1>
-  <div>
-    <form method="post" action="">
-      <p><input type="input" size="35px" id="username" name="username" value="" placeholder="name"></p>
-      <p><input type="input" size="35px" id="email" name="email" value="" placeholder="Email"></p>
-      <p><input type="input" size="35px" id="password" name="password" value="" placeholder="Password"></p>
-      <p><input type="input" size="35px" id="confpassword" name="confpassword" value="" placeholder="Password"></p>
-      <p><input type="input" size="35px" id="phone" name="phone" value="" placeholder="Phone"></p>
-      <p><input type="input" size="35px" id="address" name="address" value="" placeholder="Address"></p>
-      <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Address 2"></p>
-      <p><input type="input" size="35px" id="username" name="username" value="" placeholder="City"></p>
-      <p><select>
-        <option value="AL">Alabama</option>
-        <option value="AK">Alaska</option>
-        <option value="AZ">Arizona</option>
-        <option value="AR">Arkansas</option>
-        <option value="CA">California</option>
-        <option value="CO">Colorado</option>
-        <option value="CT">Connecticut</option>
-        <option value="DE">Delaware</option>
-        <option value="DC">District Of Columbia</option>
-        <option value="FL">Florida</option>
-        <option value="GA">Georgia</option>
-        <option value="HI">Hawaii</option>
-        <option value="ID">Idaho</option>
-        <option value="IL">Illinois</option>
-        <option value="IN">Indiana</option>
-        <option value="IA">Iowa</option>
-        <option value="KS">Kansas</option>
-        <option value="KY">Kentucky</option>
-        <option value="LA">Louisiana</option>
-        <option value="ME">Maine</option>
-        <option value="MD">Maryland</option>
-        <option value="MA">Massachusetts</option>
-        <option value="MI">Michigan</option>
-        <option value="MN">Minnesota</option>
-        <option value="MS">Mississippi</option>
-        <option value="MO">Missouri</option>
-        <option value="MT">Montana</option>
-        <option value="NE">Nebraska</option>
-        <option value="NV">Nevada</option>
-        <option value="NH">New Hampshire</option>
-        <option value="NJ">New Jersey</option>
-        <option value="NM">New Mexico</option>
-        <option value="NY">New York</option>
-        <option value="NC">North Carolina</option>
-        <option value="ND">North Dakota</option>
-        <option value="OH">Ohio</option>
-        <option value="OK">Oklahoma</option>
-        <option value="OR">Oregon</option>
-        <option value="PA">Pennsylvania</option>
-        <option value="RI">Rhode Island</option>
-        <option value="SC">South Carolina</option>
-        <option value="SD">South Dakota</option>
-        <option value="TN">Tennessee</option>
-        <option value="TX">Texas</option>
-        <option value="UT">Utah</option>
-        <option value="VT">Vermont</option>
-        <option value="VA">Virginia</option>
-        <option value="WA">Washington</option>
-        <option value="WV">West Virginia</option>
-        <option value="WI">Wisconsin</option>
-        <option value="WY">Wyoming</option>
-      </select></p>
-      <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Zip Code"></p>
-      <p class="submit"><input type="submit" name="register" value="Register"></p>
-    </form>
-  </div>
-</body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="align-left">rideMyBike</a>
+        </div>
+        <!-- document nav -->
+        <nav class="main-menu">
+            <div class="align-right">
+                <a href="login.html" class="">Login</a>
+                <a href="user-registration.html" class="">Sign Up</a>
+                <a href="#" class="">How it Works</a>
+            </div>
+        </nav>
+    </header>
+    <main class="bike-main">
+      <h1>User Registration</h1>
+      <div>
+        <form method="post" action="">
+          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Name"></p>
+          <p><input type="input" size="35px" id="email" name="email" value="" placeholder="Email"></p>
+          <p><input type="input" size="35px" id="password" name="password" value="" placeholder="Password"></p>
+          <p><input type="input" size="35px" id="confpassword" name="confpassword" value="" placeholder="Password"></p>
+          <p><input type="input" size="35px" id="phone" name="phone" value="" placeholder="Phone"></p>
+          <p><input type="input" size="35px" id="address" name="address" value="" placeholder="Address"></p>
+          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Address 2"></p>
+          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="City"></p>
+          <p><select>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select></p>
+          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Zip Code"></p>
+          <p class="submit"><input type="submit" name="register" value="Register"></p>
+        </form>
+      </div>
+    </main>
+    <!-- document footer -->
+    <footer>
+        <nav class="footer-nav">
+            <a href="#">Login</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Sign Up</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">How it Works</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Twitter</a>
+        </nav>
+    </footer>
+  </body>
 </html>
