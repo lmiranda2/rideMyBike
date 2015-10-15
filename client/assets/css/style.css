@@ -9,7 +9,6 @@ body {
 	background-size: cover;
 	font-size: 17px;
 	font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
-
 	margin: 0;
 }
 h1{
@@ -49,6 +48,10 @@ main {
 
 .footer-nav {
 	padding-top: 5px;
+	color: rgb(117, 117, 117);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 20px 15px;
 }
 
 button {
@@ -239,12 +242,14 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
     display: inline-flex;
     float: right;
 }
+
 .logo a{
     color: rgb(117, 117, 117);
     float: left;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 20px 15px;
 }
+
 .align-right a{
     box-sizing: border-box;
     color: rgb(117, 117, 117);
@@ -260,12 +265,11 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 .back-image{
-    background-image: url("../images/background.jpg");
+    background-image: url("../img/background.jpg");
     display: inline-flex;
     background-size: 100vw 400px;
     box-sizing: border-box;
     color: rgba(0, 0, 0, 0.870588);
-    //display: block;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     height: 400px;
