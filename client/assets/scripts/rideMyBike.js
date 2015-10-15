@@ -34,6 +34,9 @@ function rideMyBike() {
 				var $img = $('<img class="thumb"/>');
 				$img.attr('src', bicycle.pictureUrl);
 				$img.appendTo($bicycleDiv);
+				$img.on('click', function() {
+					location.href = 'bike-details.html';
+				})
 				// Bicycle picture end
 
 				// Bicycle information begin
