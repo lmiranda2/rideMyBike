@@ -9,9 +9,9 @@ The file 'client/assets/scripts/mockup.js' contains the hard-coded target URL. I
 
 ### Available pages (DEV week)
 
-- index.html: Main page with the listing of available bicycles in a specific region;
-- bike-details.html: Display bicycle detail and can be accessed by clicking the bicycle images available in the main page;
-- bike-registration.html: Bicycle registration page (for now must be accessed directly by using the URL);
-- login.html: Login page (can be accessed by clicking the link 'Login' in the header or footer menu);
-- user-registration.html: User registration page (can be accessed by clicking the link 'Sign Up' in the header or footer menu);
-- user-reviews.html: User reviews page (for now must be accessed directly by using the URL).
+- **index.html**: Main page with the listing of available bicycles in a specific region;
+- **bike-details.html**: Display bicycle detail and can be accessed by clicking the bicycle images available in the main page;
+- **bike-registration.html**: Bicycle registration page (for now must be accessed directly by using the URL);
+- **login.html**: Login page (can be accessed by clicking the link 'Login' in the header or footer menu);
+- **user-registration.html**: User registration page (can be accessed by clicking the link 'Sign Up' in the header or footer menu);
+- **user-reviews.html**: User reviews page (for now must be accessed directly by using the URL).
