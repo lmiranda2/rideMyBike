@@ -1,43 +1,106 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>User review - rideMyBike</title>
-  <link rel="stylesheet" href="assets/css/style1.css">
+    <meta charset="utf-8">
+    <title>Bicycle details - rideMyBike</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-	
-<h1>User Reviews</h1>
-<p>Write Your Reviews</p><br>
-      <form method="post" action="index.html">
-<div class="rating">
-    <span><input type="radio" name="rating" id="str5" value="5" class="radio_item"><label for="str5" class="label_item"><img src="assets/img/small.png"></label></span>
-    <span><input type="radio" name="rating" id="str4" value="4" class="radio_item"><label for="str4" class="label_item"><img src="assets/img/small.png"></label></span>
-    <span><input type="radio" name="rating" id="str3" value="3" class="radio_item"><label for="str3" class="label_item"><img src="assets/img/small.png"></label></span>
-    <span><input type="radio" name="rating" id="str2" value="2" class="radio_item"><label for="str2" class="label_item"><img src="assets/img/small.png"></label></span>
-    <span><input type="radio" name="rating" id="str1" value="1" class="radio_item"><label for="str1" class="label_item"><img src="assets/img/small.png"></label></span>
-</div>
-<textarea wrap="off" cols="80" rows="5"></textarea>
-        <p class="submit"><input type="submit" name="commit" value="Submit Review"></p>
-      </form>
-    </div>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="align-left">rideMyBike</a>
+        </div>
+        <!-- document nav -->
+        <nav class="main-menu">
+            <div class="align-right">
+                <a href="login.html" class="">Login</a>
+                <a href="user-registration.html" class="">Sign up</a>
+                <a href="#" class="">How it works</a>
+				<a href="index.html" class="">Home page</a>
+            </div>
+        </nav>
+    </header>
+    <main class="bike-main">
+
+        <section class="bike-images">
+
+            <div class="bike-images-current"></div>
+            <div class="bike-images-galery">
+				<img src="">
+            </div>
+
+        </section>
+        <section class="bike-details">
+        <br><br><br><br>
+            <div class="bike-nickname">
+                <h2>
+                    <i class=""></i>
+                    User Name
+                </h2>
+            </div>
+            <div class="bike-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-//  Check Radio-box
-    $(".rating input:radio").attr("checked", false);
-    $('.rating input').click(function () {
-        $(".rating span").removeClass('checked');
-        $(this).parent().addClass('checked');
-    });
 
-    $('input:radio').change(
-    function(){
-        var userRating = this.value;
-        alert(userRating);
-    }); 
-});
-</script>
+            <div class="bike-contact-owner">
+                <input type="button" value="Contact User" />
+            </div>
+        </section>
+        
+        <section class="bike-comments-rating">
+            <div class="horizontal-line"></div>
+			<h3>Comments and Rating</h3>
+            <article>
+				<a href="writereview.html"><input type="button" value="Write a review about the user" /></a>
+                <div class="bike-comment-individual">
+                    <h4>John Doe</h4>
+                    <div class="bike-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+            </article>
+            
+            <article>
+                <div class="bike-comment-individual">
+                    <h4>Jane Doe</h4>
+                    <div class="bike-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+            </article>
+        </section>
+    </main>
+    <!-- document footer -->
+    <footer>
+        <nav class="footer-nav">
+            <a href="#">Login</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Sign Up</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">How it Works</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Twitter</a>
+        </nav>
+    </footer>
+
+
+
+
 </body>
 </html>
