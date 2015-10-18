@@ -31,13 +31,28 @@ function rideMyBike() {
 				// Blurry background end
 				
 				// Bicycle picture begin
+				var $imgDiv = $('<div/>');
+				$imgDiv.addClass('picture-container');
 				var $img = $('<img class="thumb"/>');
 				$img.attr('src', bicycle.pictureUrl);
-				$img.appendTo($bicycleDiv);
-				$img.on('click', function() {
-					location.href = 'bike-details.html';
-				})
+				$img.on('click', createClickHandler(bicycle.id));
 				// Bicycle picture end
+
+				// Rating stars begin
+				var rating = Math.round((parseInt(bicycle.bicycleRating)/10)*100);
+
+				var $ratingBarDiv = $('<div/>');
+				$ratingBarDiv.addClass('rating-bar');
+
+				var $ratingDiv = $('<div/>');
+				$ratingDiv.addClass('rating');
+				$ratingDiv.attr('style', 'width:' + rating + '%');
+				$ratingDiv.attr('title', rating + '%');
+				$ratingDiv.appendTo($ratingBarDiv);
+				// Rating stars end
+				
+				$ratingBarDiv.appendTo($imgDiv);
+				$img.appendTo($imgDiv);
 
 				// Bicycle information begin
 				var $nickname = $('<span></span>');
@@ -55,18 +70,6 @@ function rideMyBike() {
 				var $wheelSize = $('<span></span>');
 				$wheelSize.text(bicycle.wheelSize);
 
-				// Rating stars begin
-				var rating = Math.round((parseInt(bicycle.bicycleRating)/10)*100);
-
-				var $ratingBarDiv = $('<div/>');
-				$ratingBarDiv.addClass('rating_bar');
-
-				var $ratingDiv = $('<div/>');
-				$ratingDiv.addClass('rating');
-				$ratingDiv.attr('style', 'width:' + rating + '%');
-				$ratingDiv.attr('title', rating + '%');
-				$ratingDiv.appendTo($ratingBarDiv);
-				// Rating stars end
 
 				var $canDeliver = $('<span></span>');
 				$canDeliver.text(bicycle.canDeliver);
@@ -75,7 +78,7 @@ function rideMyBike() {
 				var $captionDiv = $('<div/>');
 				// $nickname.appendTo($captionDiv);
 				// $tanDeliver.appendTo($captionDiv);
-				$ratingBarDiv.appendTo($bicycleDiv);
+				$imgDiv.appendTo($bicycleDiv);
 				// $captionDiv.appendTo($bicycleDiv);
 
 				$('#search-results').append($bicycleDiv);
@@ -83,15 +86,21 @@ function rideMyBike() {
 		});
 	}
 
-	function checkFormFields(location, dates) {
+	function createClickHandler(id) {
+		return function() {
+			location.href = 'bike-details.html?id=' + id;
+		};
+	}
+
+	function checkFormFields() {
 		var location = $('#autocomplete');
 		var dates = $('.search-form input[type="date"]');
 		var pickup = $(dates[0]).val();
 		var dropoff = $(dates[1]).val();
 
-		if (location.val() == "") {
+		if (location.val() === "") {
 			alert("Please choose a location.");
-		} else if (pickup == "" || dropoff == "") {
+		} else if (pickup === "" || dropoff === "") {
 			alert("Please verify pick up and drop off dates.");
 		} else {
 			if (jsonPlace.country != 'United States') {
@@ -104,7 +113,6 @@ function rideMyBike() {
 		}
 		return false;
 	}
-
 
 	$(".search-form button").on("click", function(e) {
 		performSearch();
@@ -121,9 +129,9 @@ function rideMyBike() {
 		}
 	});
 
-	initialRandomSearch();
-
 	$("#autocomplete").focus();
+
+	initialRandomSearch();
 
 }
 

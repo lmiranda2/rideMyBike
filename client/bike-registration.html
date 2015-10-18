@@ -21,25 +21,34 @@
         </nav>
     </header>
     <main class="bike-main">
-      <h1>Bike Registration</h1>
-      <form method="post" action="">
-        <label>Bike Pictures: 
-        <p><input type="image" size="35px" id="username" name="username" value=""></p></label>
-        <p><input type="input" size="35px" id="nickname" name="nickname" value="" placeholder="Nickname"></p>
-        <select id="biketype" >
-          <option value="" selected disabled>Type</option>
-          <option value="Hybrid">Fixed Gear</option>
-          <option value="Hybrid">Hybrid</option>
-          <option value="Mountain Bike">Mountain</option>
-          <option value="Road">Road</option>
-        </select>
-        </label></p>
-        <p><input type="input" size="35px" id="model" name="model" value="" placeholder="Model"></p>
-        <p><input type="input" size="35px" id="framesize" name="framesize" value="" placeholder="Frame Size"></p>
-        <textarea wrap="off" cols="40" rows="5" placeholder="Description"></textarea></p>
-        <p class="submit"><input type="submit" name="register" value="Submit"></p>
-      </form>
-    </div>
+        <h1>Bike Registration</h1>
+        <div class="form-class">
+          <form method="post" action="">
+            <input type="file" multiple id="composer-photo" accept="image/*" onchange="handlePictures(this.files)">
+            <div id="pictures">
+                <div id="add-picture" class="thumb-register" title="Choose a picture to upload"></div>
+<!--  These divs will be created by js when picture is added
+                <div id="added-picture-1" class="thumb-register">1</div>
+                <div id="added-picture-2" class="thumb-register">2</div>
+                <div id="added-picture-3" class="thumb-register">3</div>
+                <div id="added-picture-4" class="thumb-register">4</div>
+                <div id="added-picture-5" class="thumb-register">5</div> 
+-->
+            </div>
+            <p><input type="input" id="nickname" name="nickname" value="" placeholder="Bicycle nickname"></p>
+            <p><select id="biketype" >
+              <option value="" selected disabled>Type</option>
+              <option value="Hybrid">Fixed Gear</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Mountain Bike">Mountain</option>
+              <option value="Road">Road</option>
+            </select></p>
+            <p><input type="input" id="model" name="model" value="" placeholder="Model"></p>
+            <p><input type="input" id="framesize" name="framesize" value="" placeholder="Frame Size"></p>
+            <p><textarea wrap="off" cols="40" rows="5" placeholder="Description"></textarea></p>
+            <input type="submit" name="register" value="Register">
+          </form>
+        </div>
 
 </main>
     <!-- document footer -->
@@ -54,5 +63,16 @@
             <a href="#">Twitter</a>
         </nav>
     </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        function handlePictures() {
+            // TODO: Centralize this code for reuse
+        }
+
+        $("#add-picture").on("click", function(e) {
+            $("#composer-photo").click();
+        });
+    </script>
 </body>
 </html>

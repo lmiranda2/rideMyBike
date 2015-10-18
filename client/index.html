@@ -9,66 +9,66 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<!-- document header -->
-<header>
-    <div class="logo">
-        <a href="#" class="align-left">rideMyBike</a>
-    </div>
-    <!-- document nav -->
-    <nav class="main-menu">
-        <div class="align-right">
+    <!-- document header -->
+    <header>
+        <div class="logo">
+            <a href="#" class="align-left">rideMyBike</a>
+        </div>
+        <!-- document nav -->
+        <nav class="main-menu">
+            <div class="align-right">
+                <a href="login.html">Login</a>
+                <a href="user-registration.html">Sign Up</a>
+                <a href="#">How it Works</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- document main -->
+    <main>
+        <div class="back-image">
+            <div class="search-area">
+                <h1>Find a bicycle to borrow</h1>
+                <!-- note input -->
+                <section class="search-form">
+                    <input id="autocomplete" type="search" placeholder="Location" required>
+                    <input type="date" required>
+                    <input type="date" required>
+                    <button>Search</button>
+                    <input id="street_number" hidden="true">
+                    <input id="route" hidden="true">
+                    <input id="locality" hidden="true">
+                    <input id="administrative_area_level_1" hidden="true">
+                    <input id="postal_code" hidden="true">
+                    <input id="country" hidden="true">
+                </section>
+            </div>
+        </div>
+        <!-- search results -->
+        <section id="search-results" class="grid">
+        </section>
+    </main>
+    <!-- document footer -->
+    <footer>
+        <nav class="footer-nav">
             <a href="login.html">Login</a>
+            <strong>|&nbsp;&nbsp;</strong>
             <a href="user-registration.html">Sign Up</a>
+            <strong>|&nbsp;&nbsp;</strong>
             <a href="#">How it Works</a>
-        </div>
-    </nav>
-</header>
-
-<!-- document main -->
-<main>
-    <div class="back-image">
-        <div class="search-area">
-            <h1>Find a bicycle to borrow</h1>
-            <!-- note input -->
-            <section class="search-form">
-                <input id="autocomplete" type="search" placeholder="Location" required>
-                <input type="date" required>
-                <input type="date" required>
-                <button>Search</button>
-                <input id="street_number" hidden="true">
-                <input id="route" hidden="true">
-                <input id="locality" hidden="true">
-                <input id="administrative_area_level_1" hidden="true">
-                <input id="postal_code" hidden="true">
-                <input id="country" hidden="true">
-            </section>
-        </div>
-    </div>
-    <!-- search results -->
-    <section id="search-results" class="grid">
-    </section>
-</main>
-<!-- document footer -->
-<footer>
-    <nav class="footer-nav">
-        <a href="login.html">Login</a>
-        <strong>|&nbsp;&nbsp;</strong>
-        <a href="user-registration.html">Sign Up</a>
-        <strong>|&nbsp;&nbsp;</strong>
-        <a href="#">How it Works</a>
-        <strong>|&nbsp;&nbsp;</strong>
-        <a href="#">Twitter</a>
-    </nav>
-</footer>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Twitter</a>
+        </nav>
+    </footer>
 <!-- Remove - Mockup script -->
-<script type="text/javascript" src="assets/scripts/mockup.js"></script>
-<!-- end of Remove - Mockup script -->
+    <script type="text/javascript" src="assets/scripts/mockup.js"></script>
+    <!-- end of Remove - Mockup script -->
 
-<!-- js scripts... -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
-<script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async
-        defer></script>
+    <!-- js scripts... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
+    <script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async
+            defer></script>
 </body>
 </html>

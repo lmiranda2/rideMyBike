@@ -1,7 +1,12 @@
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
 body {
-	min-width: 436px;
-	max-width: 1800px;
-	margin: auto;
+  min-width: 436px;
+  margin: 0 0 100px; /* bottom = footer height */
 	color: #404040;
 	background: rgb(230, 230, 230);
 	background-position: center center;
@@ -9,11 +14,10 @@ body {
 	background-size: cover;
 	font-size: 17px;
 	font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
-	margin: 0;
 }
 
 h1{
-    margin: 15px 0 ;
+  margin: 15px 0;
 }
 
 header{
@@ -24,11 +28,20 @@ header{
 	display: block;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	height: 57px;
+	height: 40px;
 	position: relative;
-	width: 99vw;
+	width: 99.2vw;
 	left: 0;
 	right: 0;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  height: 100px;
+  width: 100%;
 }
 
 .container {
@@ -37,75 +50,51 @@ header{
 }
 
 .login {
-  top: 200px;
+  display: inline-block;
   position: relative;
-  margin: 0 auto;
-  width: 350px;
-  height: 260px;
-  background: white;
-  border-radius: 3px;
-  @include box-shadow(0 0 200px rgba(white, .5), 0 1px 2px rgba(black, .3));
+  top: 250px;
+  width: 311px;
+  height: 220px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: white;
+}
 
-  h1 {
-    margin: -20px -20px 21px;
-    line-height: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #555;
-    text-align: center;
-    text-shadow: 0 1px white;
-    background: #f3f3f3;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-    @include linear-gradient(top, whiteffd, #eef2f5);
-    @include box-shadow(0 1px #f5f5f5);
-  }
+.login p {
+  margin: 0px;
+}
 
-  p { margin: 20px 0 0; }
-  p:first-child { margin-top: 0; }
+.login input[type="submit"] {
+  margin-top: 5px;
+}
 
-  input[type=text], input[type=password] { width: 278px; }
+.remember_me label {
+  float: left;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
 
-  p.remember_me {
-    float: left;
-    line-height: 31px;
-
-    label {
-      font-size: 12px;
-      color: #777;
-      cursor: pointer;
-    }
-
-    input {
-      position: relative;
-      bottom: 1px;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-  }
-
-  p.submit { text-align: right; }
+.remember_me input {
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+  vertical-align: middle;
 }
 
 .login-help {
-  margin: 25px 0;
+  margin: 40px 0;
+  padding-top: 15px;
   font-size: 11px;
   color: black;
   text-align: center;
-
-  a {
-    color: #cce7fa;
-    text-decoration: none;
-
-    &:hover { text-decoration: underline; }
-  }
 }
 
 .content{
 	position: relative;
 	margin: 0 auto;
 	padding: 20px;
-
 	background: white;
 	border-radius: 3px
 }
@@ -116,31 +105,15 @@ main {
 }
 
 .footer-nav {
-	padding-top: 5px;
+	/*padding-top: 5px;*/
 	color: rgb(117, 117, 117);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    margin: 20px 15px;
-
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 20px 15px;
 }
-
-/* site footer */
-footer {
-	max-width: 1800px;
-	left: 0;
-	right: 0;
-	margin: auto;
-	text-align: center;
-	padding-bottom: 15px;
-}
-/*
-#footer-login {
-	position: absolute;
-	bottom: 0;
-}*/
 
 a {
-	color: rgb(117, 117, 117);;
+	color: rgb(117, 117, 117);
 	text-decoration: none;
 	margin-right: 10px;
 }
@@ -150,44 +123,29 @@ a:visited {
 	text-decoration: none;
 }
 
-a.align-right {
-	float: right;
-}
-
 section.search-form {
-	padding: 2px;
-	padding-bottom: 100px;
-  	margin-left: 5px;
-  	border-radius: 0;
+  padding: 2px;
+  padding-bottom: 100px;
+  margin-left: 5px;
+  border-radius: 0;
 }
 
 #autocomplete {
 	width: 400px;
 }
 
-input[type="date"] {
-	border: none;
-}
-
 #search-results {
-	width: 99vw;
+	width: 99.2vw;
 }
 
 /*Begin grid cell configuration*/
 #search-results .div-img {
-    /* Just in case there are inline attributes */
-	display: inline-block;
-	margin: 5px 0px 0px 0px;
-    position: relative;
-    cursor: pointer;
-    height: 250px;
-
-}
-
-.search-area {
-    position: relative;
-    margin: auto;
-
+  /* Just in case there are inline attributes */
+  display: inline-block;
+  margin: 5px 0px 0px 0px;
+  position: relative;
+  cursor: pointer;
+  height: 250px;
 }
 
 #search-results:after {
@@ -196,18 +154,27 @@ input[type="date"] {
 	display:block;
 }
 
+.search-area {
+  position: relative;
+  margin: auto;
+}
+
 .blurry {
-	background-repeat: none;
-	background-size: cover;
-	-webkit-filter: brightness(80%) contrast(80%) blur(8px);
-    -moz-filter: brightness(80%) contrast(80%) blur(8px);
-    -ms-filter: brightness(80%) contrast(80%) blur(8px);
-    -o-filter: brightness(80%) contrast(80%) blur(8px);
-    filter: brightness(80%) contrast(80%) blur(8px);
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: -1;
+  background-repeat: none;
+  background-size: cover;
+  -webkit-filter: brightness(80%) contrast(80%) blur(8px);
+  -moz-filter: brightness(80%) contrast(80%) blur(8px);
+  -ms-filter: brightness(80%) contrast(80%) blur(8px);
+  -o-filter: brightness(80%) contrast(80%) blur(8px);
+  filter: brightness(80%) contrast(80%) blur(8px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.picture-container {
+  display: inline-block;
 }
 /*End grid cell configuration*/
 
@@ -222,45 +189,16 @@ input[type="date"] {
 }
 
 @media (max-width: 1628px) {
-	.col {
-		width: 33%;
-	}
+	.col { width: 33%; }
 }
 @media (max-width: 1300px) {
-	.col {
-  		width: 50%;
-  	}
+  .col { width: 50%; }
 }
 @media (max-width: 720px) {
- 	.col {
-  		width: 100%;
-  	}
+ 	.col { width: 100%; }
 }
+
 /*End grid configuration*/
-
-button {
-	vertical-align: top;
-	height: 46px;
-	padding: 0 18px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #527881;
-	text-shadow: 0 1px #e3f1f1;
-	background: #cde5ef;
-	border: 1px solid;
-	border-color: #b4ccce #b3c0c8 #9eb9c2;
-    margin-bottom: -1px;
-	outline: 0;
-	@include box-sizing(content-box); // Firefox sets this to border-box by default
-	@include linear-gradient(top, #edf5f8, #cde5ef);
-	@include box-shadow(inset 0 1px white, 0 1px 2px rgba(black, .15));
-
-}
-button:active {
-	 background: #cde5ef;
-	 border-color: #9eb9c2 #b3c0c8 #b4ccce;
- @include box-shadow(inset 0 0 3px rgba(black, .2));
- }
 
 :-moz-placeholder {
 	color: #c9c9c9 !important;
@@ -272,199 +210,290 @@ button:active {
 	font-size: 17px;
 }
 
-input {
-	font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
-	font-size: 19px;
+button {
+  vertical-align: top;
+  height: 46px;
+  padding: 0 18px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  margin-bottom: -1px;
+  outline: 0;
+}
+
+button:active {
+  background: #cde5ef;
+  border-color: #9eb9c2 #b3c0c8 #b4ccce;
+}
+
+input[type=submit] {
+  padding: 0 18px;
+  height: 29px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  outline: 0;
+  float: right;
+}
+
+input[type=submit]:active {
+  background: #cde5ef;
+  border-color: #9eb9c2 #b3c0c8 #b4ccce;
 }
 
 input[type=text], input[type=password], input[type=date], input[type=search] {
-	margin: 5px;
-	padding: 0 10px;
-	width: 280px;
-	height: 34px;
-	color: #404040;
-	background: white;
-	border: 1px solid;
-	border-color: #c4c4c4 #d1d1d1 #d4d4d4;
-	border-radius: 2px;
-	outline: 5px solid #eff4f7;
-	-moz-outline-radius: 3px; // Can we get this on WebKit please?
-@include box-shadow(inset 0 1px 3px rgba(black, .12));
+  margin: 5px;
+  padding: 0 10px;
+  width: 280px;
+  height: 34px;
+  color: #404040;
+  background: white;
+  border: 1px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 5px solid #eff4f7;
+  -moz-outline-radius: 3px; // Can we get this on WebKit please?
+  @include box-shadow(inset 0 1px 3px rgba(black, .12));
 }
+
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus {
-	 border-color: #7dc9e2;
-	 outline-color: #dceefc;
-	 outline-offset: 0; // WebKit sets this to -1 by default
- }
+  border-color: #7dc9e2;
+  outline-color: #dceefc;
+  outline-offset: 0; // WebKit sets this to -1 by default
+}
 
 .thumb {
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	border: 1px solid gray;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid gray;
 }
 
 .main-menu {
-    display: inline-flex;
-    float: right;
+  display: inline-flex;
+  float: right;
 }
 
-.logo a{
-    color: rgb(117, 117, 117);
-    float: left;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 20px 15px;
+.logo a {
+  color: rgb(117, 117, 117);
+  float: left;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 10px 15px;
 }
 
-.align-right a{
-    box-sizing: border-box;
-    color: rgb(117, 117, 117);
-    float: right;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-    font-size: 14px;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    margin: 20px 15px;
-
+.align-right a {
+  box-sizing: border-box;
+  color: rgb(117, 117, 117);
+  float: right;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 10px 15px;
 }
 
 .back-image{
-    background-image: url("../img/background1.jpg");
-    background-size: cover;
-    background-position: center center;
-    height: 400px;
-    width: 99vw;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    display: inline-flex;
-
-    /*
-    background-size: 100vw 400px;
-    color: rgba(0, 0, 0, 0.870588);
-    line-height: 21px;
-    z-index: auto;
-    */
+  background-image: url("../img/background1.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+  width: 99.2vw;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  display: inline-flex;
 }
 
 /*Begin Star rating*/
-.rating_bar {
-	position: relative;
-	top: -250px;
-	left: 315px;
-    /*this class creats 5 stars bar with empty stars */
-    /*each star is 16 px, it means 5 stars will make 80px together */
-    width: 80px;
-    /*height of empty star*/
-    height: 16px;
-    /*background image with stars */
-    background: url(../img/stars.png);
-    /*which will be repeated horizontally */
-    background-repeat: repeat-x;
-    /* as we are using sprite image, we need to position it to use right star, 
-    //0 0 is for empty */
-    background-position: 0 0;
-    /* align inner div to the left */
-    text-align: left;
+.rating-bar {
+  position: absolute;
+  float: right;
+  /*this class creats 5 stars bar with empty stars */
+  /*each star is 16 px, it means 5 stars will make 80px together */
+  width: 80px;
+  /*height of empty star*/
+  height: 16px;
+  /*background image with stars */
+  background: url(../img/stars.png);
+  /*which will be repeated horizontally */
+  background-repeat: repeat-x;
+  /* as we are using sprite image, we need to position it to use right star, 
+  //0 0 is for empty */
+  background-position: 0 0;
+  /* align inner div to the left */
+  text-align: left;
 }
 .rating {
-    /* height of full star is the same, we won't specify width here */
-    height: 16px;
-    /* background image with stars */
-    background: url(../img/stars.png);
-    /* now we will position background image to use 16px from top, 
-    //which means use full stars */
-    background-position: 0 -16px;
-    /* and repeat them horizontally */
-    background-repeat: repeat-x;
+  /* height of full star is the same, we won't specify width here */
+  height: 16px;
+  /* background image with stars */
+  background: url(../img/stars.png);
+  /* now we will position background image to use 16px from top, 
+  //which means use full stars */
+  background-position: 0 -16px;
+  /* and repeat them horizontally */
+  background-repeat: repeat-x;
 }
 /*End Star rating*/
 
 /* Bike Details*/
-.bike-images{
-    float: left;
-    width: 48vw;
-    min-height: 60vh;
-}
-.bike-details{
-    float: right;
-    width: 48vw;
-    min-height: 60vh;
+.bike-images {
+  float: left;
+  width: 48vw;
+  min-height: 60vh;
 }
 
-.bike-main{
-    display: inline-block;
-    width: 99vw;
+.bike-details {
+  float: right;
+  width: 48vw;
+  min-height: 60vh;
 }
 
-.bike-borrow-date{
-    line-height: 12px;
-    height: 14px;
-    font-size: 14px;
-    width: 80px !important;
+.bike-main {
+  display: inline-block;
+  width: 99.2vw;
+}
+
+.bike-borrow-date {
+  line-height: 12px;
+  height: 14px;
+  font-size: 14px;
+  width: 80px !important;
 }
 
 .bike-dates i {
-    margin-left: 5px;
-    margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 15px;
 }
 
 .bike-contact-owner{
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .bike-images-current{
-    width: 80%;
-    height: 40vh;
-    -moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	border: 2px solid gray;
-    margin: 30px auto;
-    background-image: url("mocks/img/road_01.jpg");
-     background-repeat: no-repeat;
-    /* as we are using sprite image, we need to position it to use right star, 
-    //0 0 is for empty */
-    background-position: 0 0;
+  width: 80%;
+  height: 40vh;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid gray;
+  margin: 30px auto;
+  background-image: url("mocks/img/road_01.jpg");
+  background-repeat: no-repeat;
+  /* as we are using sprite image, we need to position it to use right star, 
+  //0 0 is for empty */
+  background-position: 0 0;
 }
 
 .bike-images-galery-thumb{
-     width: 20%;
-    height: 10vh;
-    -moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	border: 2px solid gray;
-    margin: 5px;
-    display:inline-block;
-    margin: auto;
+  width: 20%;
+  height: 10vh;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid gray;
+  margin: 5px;
+  display:inline-block;
+  margin: auto;
 }
 
 .bike-images-galery i {
-    vertical-align: middle;
-    margin-bottom: 10vh;
+  vertical-align: middle;
+  margin-bottom: 10vh;
 }
 
 .bike-comments-rating{
-    display:inline-block;
-    margin: 30px;
+  display:inline-block;
+  margin: 30px;
 }
 
-.bike-comments-rating h4,
-.bike-comments-rating i{
-      text-align: left;
-    margin: 0;
-
+.bike-comments-rating h4, i {
+  text-align: left;
+  margin: 0;
 }
 
-.bike-comment-individual{
-   text-align: left;
-   
+.bike-comment-individual {
+  text-align: left; 
 }
 
-.horizontal-line{
-     border-top: 2px solid black;
-     margin-bottom: 20px;
+.horizontal-line {
+  border-top: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.form-class {
+  width: 350px;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+.form-class input, select, textarea {
+  width: 100%;
+  resize: vertical;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-class :-moz-placeholder {
+  font-size: 12px;
+}
+
+.form-class ::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+select {
+  padding-bottom: 2px;
+  padding-top: 3px;
+  background-color: white;
+}
+
+#picture {
+  text-align: left;
+}
+
+#pictures {
+  text-align: left;
+  padding-left: 1px;
+  padding-right: 1px;
+  white-space:nowrap;
+  width: 100%;
+  height: 100px;
+  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.thumb-register {
+  background: url("../img/plus.gif");
+  text-align: center;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  border: 1px dashed;
+}
+
+.thumb-register:hover {
+  border: 2px dashed #86becb; 
+  color: #86becb;
+  cursor: pointer;
+}
+
+#composer-photo {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
