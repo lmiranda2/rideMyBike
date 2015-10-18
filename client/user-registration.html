@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>User registration - rideMyBike</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -22,17 +21,30 @@
     </header>
     <main class="bike-main">
       <h1>User Registration</h1>
-      <div>
+      <div class="form-class">
         <form method="post" action="">
-          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Name"></p>
-          <p><input type="input" size="35px" id="email" name="email" value="" placeholder="Email"></p>
-          <p><input type="input" size="35px" id="password" name="password" value="" placeholder="Password"></p>
-          <p><input type="input" size="35px" id="confpassword" name="confpassword" value="" placeholder="Password"></p>
-          <p><input type="input" size="35px" id="phone" name="phone" value="" placeholder="Phone"></p>
-          <p><input type="input" size="35px" id="address" name="address" value="" placeholder="Address"></p>
-          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Address 2"></p>
-          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="City"></p>
+        <input type="file" multiple id="composer-photo" accept="image/*" onchange="handlePictures(this.files)">
+        <div id="picture">
+            <div id="add-picture" class="thumb-register" title="Choose a picture to upload"></div>
+    <!-- 
+        One div like the bellow will be added after the user choose a picture and the div above
+            (add-picture) will be removed. User will be able to remove/change the selected picture by
+            clicking the current image.z
+    -->
+<!--
+            <div id="added-picture-1" class="bicycle-pictures">1</div>
+-->
+        </div>
+          <p><input type="input" id="username" name="username" value="" placeholder="Name"></p>
+          <p><input type="email" id="email" name="email" placeholder="Email"></p>
+          <p><input type="input" id="password" name="password" value="" placeholder="Password"></p>
+          <p><input type="input" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
+          <p><input type="input" id="phone" name="phone" value="" placeholder="Phone"></p>
+          <p><input type="input" id="address" name="address" value="" placeholder="Address"></p>
+          <p><input type="input" id="username" name="username" value="" placeholder="Address 2"></p>
+          <p><input type="input" id="username" name="username" value="" placeholder="City"></p>
           <p><select>
+            <option value="" selected disabled>State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -85,8 +97,8 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select></p>
-          <p><input type="input" size="35px" id="username" name="username" value="" placeholder="Zip Code"></p>
-          <p class="submit"><input type="submit" name="register" value="Register"></p>
+          <p><input type="input" id="username" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
+          <input type="submit" name="register" value="Register">
         </form>
       </div>
     </main>
@@ -102,5 +114,15 @@
             <a href="#">Twitter</a>
         </nav>
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        function handlePicture() {
+            // TODO: Centralize this code for reuse
+        }
+
+        $("#add-picture").on("click", function(e) {
+            $("#composer-photo").click();
+        });
+    </script>
   </body>
 </html>
