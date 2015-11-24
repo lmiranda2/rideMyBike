@@ -20,7 +20,7 @@
         </nav>
     </header>
     <main class="bike-main">
-      <h1>User Registration</h1>
+      <h1>Sign Up</h1>
       <div class="form-class">
         <form method="post" action="">
         <input type="file" multiple id="composer-photo" accept="image/*" onchange="handlePictures(this.files)">
@@ -35,14 +35,14 @@
             <div id="added-picture-1" class="bicycle-pictures">1</div>
 -->
         </div>
-          <p><input type="input" id="username" name="username" value="" placeholder="Name"></p>
-          <p><input type="email" id="email" name="email" placeholder="Email"></p>
-          <p><input type="input" id="password" name="password" value="" placeholder="Password"></p>
-          <p><input type="input" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
-          <p><input type="input" id="phone" name="phone" value="" placeholder="Phone"></p>
-          <p><input type="input" id="address" name="address" value="" placeholder="Address"></p>
-          <p><input type="input" id="username" name="username" value="" placeholder="Address 2"></p>
-          <p><input type="input" id="username" name="username" value="" placeholder="City"></p>
+          <p><input type="text" id="username" name="username" value="" placeholder="Name"></p>
+          <p><input type="text" id="email" name="email" placeholder="Email"></p>
+          <p><input type="text" id="password" name="password" value="" placeholder="Password"></p>
+          <p><input type="text" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
+          <p><input type="text" id="phone" name="phone" value="" placeholder="Phone"></p>
+          <p><input type="text" id="address" name="address" value="" placeholder="Address"></p>
+          <p><input type="text" id="username" name="username" value="" placeholder="Address 2"></p>
+          <p><input type="text" id="username" name="username" value="" placeholder="City"></p>
           <p><select>
             <option value="" selected disabled>State</option>
             <option value="AL">Alabama</option>
@@ -97,7 +97,7 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select></p>
-          <p><input type="input" id="username" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
+          <p><input type="text" id="username" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
           <input type="submit" name="register" value="Register">
         </form>
       </div>

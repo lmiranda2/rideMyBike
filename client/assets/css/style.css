@@ -7,8 +7,8 @@ html {
 body {
   min-width: 436px;
   margin: 0 0 100px; /* bottom = footer height */
-	color: #404040;
-	background: rgb(230, 230, 230);
+	color: #1D0D8F;
+	background: #883AFF;
 	background-position: center center;
 	background-repeat: none;
 	background-size: cover;
@@ -23,7 +23,6 @@ h1{
 header{
 	background-color: rgb(255, 255, 255);
 	box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
-	box-sizing: border-box;
 	color: rgb(117, 117, 117);
 	display: block;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -52,7 +51,7 @@ footer {
 .login {
   display: inline-block;
   position: relative;
-  top: 250px;
+  top: 150px;
   width: 311px;
   height: 220px;
   padding: 10px;
@@ -60,6 +59,12 @@ footer {
   background-color: white;
 }
 
+p{
+
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
 .login p {
   margin: 0px;
 }
@@ -87,7 +92,7 @@ footer {
   margin: 40px 0;
   padding-top: 15px;
   font-size: 11px;
-  color: black;
+  color: #1D0D8F;
   text-align: center;
 }
 
@@ -231,18 +236,20 @@ button:active {
 }
 
 input[type=submit] {
-  padding: 0 18px;
-  height: 29px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #527881;
-  text-shadow: 0 1px #e3f1f1;
-  background: #cde5ef;
-  border: 1px solid;
-  border-color: #b4ccce #b3c0c8 #9eb9c2;
-  outline: 0;
-  float: right;
-}
+    padding: 0 18px;
+    height: 29px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1D0D8F;
+    text-shadow: 0 1.5px #883AFF;
+    background: #883AFF;
+    border: 1px solid;
+    border-color: #1D0D8F;
+    border-radius: 5px;
+    outline: 0;
+    float: right;
+    box-shadow: 1px 2px 4px #883aff;
+  }
 
 input[type=submit]:active {
   background: #cde5ef;
@@ -250,18 +257,16 @@ input[type=submit]:active {
 }
 
 input[type=text], input[type=password], input[type=date], input[type=search] {
-  margin: 5px;
-  padding: 0 10px;
-  width: 280px;
-  height: 34px;
-  color: #404040;
-  background: white;
-  border: 1px solid;
-  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
-  border-radius: 2px;
-  outline: 5px solid #eff4f7;
-  -moz-outline-radius: 3px; // Can we get this on WebKit please?
-  @include box-shadow(inset 0 1px 3px rgba(black, .12));
+    margin: 5px;
+    padding: 0 10px;
+    width: 280px;
+    height: 34px;
+    color: #404040;
+    background: white;
+    border: 1px solid;
+    border-color: #1D0D8F;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px #883aff;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus {
@@ -455,9 +460,16 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 select {
-  padding-bottom: 2px;
-  padding-top: 3px;
-  background-color: white;
+  
+    margin: 5px;
+    padding: 0 10px;
+    height: 34px;
+    color: #404040;
+    background: white;
+    border: 1px solid;
+    border-color: #1D0D8F;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px #883aff;
 }
 
 #picture {
