@@ -3,13 +3,11 @@
 function retrieveBicycleData(handler) {
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:8080/mocks/bicycleResult.json',
-		async: false,
-		jsonpCallback: 'jsonCallback',
+		url: 'http://localhost:8082/api/bikes',
 		contentType: "application/json",
-		dataType: 'jsonp',
+		dataType: 'json',
 		success: function(json) {
-			handler(json.bicycles);
+			handler(json.data);
 		},
 		error: function(e) {
 			alert(e.message);

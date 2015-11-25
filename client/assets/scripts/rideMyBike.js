@@ -15,6 +15,31 @@ function rideMyBike() {
 
 	}
 
+	function returnImageUrl(bikeId, imageId){
+		return 'http://localhost:8082/api/bikes/' + bikeId + '/images/' + imageId;
+	}
+
+	function createRatingStars(rating, div){
+		var fullStars = parseInt(rating);
+		var hasHalfStar = (rating % 1) > 0.25;
+
+		for(var i = 0; i < fullStars; i++) {
+				$(div).append('<img class="rating-star" src="/assets/img/Star-Full.png" />')
+		}
+
+		var remainingStars = 5 - fullStars;
+
+		if(hasHalfStar) {
+			$(div).append('<img class="rating-star" src="/assets/img/Star-Half-Full.png" />')
+			remainingStars--;
+		}
+
+		for(var i = 0; i < remainingStars; i++) {
+			$(div).append('<img class="rating-star" src="/assets/img/Star-Empty.png" />')
+		}
+
+	}
+
 	function initialRandomSearch() {
 		retrieveBicycleData(function(bicycles) {
 			for (var i=0; i<bicycles.length; i++) {
@@ -24,30 +49,33 @@ function rideMyBike() {
 				$bicycleDiv.addClass('div-img col');
 
 				// Blurry background begin
-				var $blurryDiv = $('<div/>');
-				$blurryDiv.addClass('blurry');
-				$blurryDiv.css('background', 'url(' + bicycle.pictureUrl + ')');
-				$blurryDiv.appendTo($bicycleDiv);
+				//var $blurryDiv = $('<div/>');
+				//$blurryDiv.addClass('blurry');
+
+				var mainImage = $.grep(bicycle.images, function(image){ return image.bikeImageMain.data[0] === 1; })[0];
+
+				//$blurryDiv.css('background', 'url(' + returnImageUrl(bicycle.bikeId, mainImage.bikeImageId) + ')');
+				//$blurryDiv.appendTo($bicycleDiv);
 				// Blurry background end
 				
 				// Bicycle picture begin
 				var $imgDiv = $('<div/>');
 				$imgDiv.addClass('picture-container');
 				var $img = $('<img class="thumb"/>');
-				$img.attr('src', bicycle.pictureUrl);
+				$img.attr('src', returnImageUrl(bicycle.bikeId, mainImage.bikeImageId));
 				$img.on('click', createClickHandler(bicycle.id));
 				// Bicycle picture end
 
 				// Rating stars begin
-				var rating = Math.round((parseInt(bicycle.bicycleRating)/10)*100);
+				var rating = Math.round((parseInt(bicycle.bikeRating)/10)*100);
 
 				var $ratingBarDiv = $('<div/>');
 				$ratingBarDiv.addClass('rating-bar');
-
+				createRatingStars(bicycle.bikeRating, $ratingBarDiv);
 				var $ratingDiv = $('<div/>');
-				$ratingDiv.addClass('rating');
-				$ratingDiv.attr('style', 'width:' + rating + '%');
-				$ratingDiv.attr('title', rating + '%');
+				//$ratingDiv.addClass('rating');
+				//$ratingDiv.attr('style', 'width:' + rating + '%');
+				//$ratingDiv.attr('title', rating + '%');
 				$ratingDiv.appendTo($ratingBarDiv);
 				// Rating stars end
 				
