@@ -5,6 +5,12 @@
     <title>Bicycle details - rideMyBike</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+	
+<style>
+
+</style>
+	
 </head>
 <body>
     <header>
@@ -24,20 +30,24 @@
 
         <section class="bike-images">
 
-            <div class="bike-images-current"></div>
+            <div class="bike-images-current" id="imageTest">
+            	<img src="assets/img/img1.jpg">
+            </div>
             <div class="bike-images-galery">
-                <i class="fa fa-caret-left fa-3x"></i>
-                <div class="bike-images-galery-thumb">
+                <i id="previous" class="fa fa-caret-left fa-3x"></i>
+                <div class="bike-images-galery-thumb" style="background-color:black">	
                 </div>
-                <div class="bike-images-galery-thumb">
+                <div class="bike-images-galery-thumb" style="background-color:black">
                 </div>
-                <div class="bike-images-galery-thumb">
+                <div class="bike-images-galery-thumb" style="background-color:black">
                 </div>
-                <i class="fa fa-caret-right fa-3x"></i>
+                <i id="next" class="fa fa-caret-right fa-3x"></i>
             </div>
 
         </section>
-        <section class="bike-details">
+        <section id="originalDetails" class="bike-details">
+
+<span id="bikeId" hidden>12</span>
 
             <div class="bike-nickname">
                 <h2>
@@ -46,11 +56,11 @@
                 </h2>
             </div>
             <div class="bike-rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+                <i class="fa fa-star-o" style="color:#FFD700"></i>
             </div>
             <div class="bike-type">
                 <p><strong>Type :</strong> Road</p>
@@ -77,20 +87,65 @@
 
             <div class="bike-contact-owner">
                 <input type="button" value="Contact Owner" />
+							
+            </div>
+        </section>
+		
+        <section id="testdetails" class="bike-details" hidden>
+
+            <div class="bike-nickname">
+                <h2>
+                    <i class="fa fa-bicycle fa-1x"></i>
+                    Example number 2
+                </h2>
+            </div>
+            <div class="bike-rating">
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star" style="color:#FFD700"></i>
+                <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+            </div>
+            </div>
+            <div class="bike-type">
+                <p><strong>Type :</strong> Road</p>
+            </div>
+            <div class="bike-model">
+                <p><strong>Model :</strong> 2013 Felt Compulsive</p>
+            </div>
+
+            <div class="bike-frame-size">
+                <p><strong>Frame Size: </strong> M</p>
+            </div>
+
+            <div class="bike-wheel-size">
+                <p><strong>Wheel Size: </strong> 700c</p>
+            </div>
+
+            <div class="bike-description">
+                <p><strong>Description: </strong> asasasasasasasrci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+            </div>
+
+            <div class="bike-dates">
+                <input type="date" id="start-date" class="bike-borrow-date" /><i class="fa fa-calendar"></i> <input type="date" class="bike-borrow-date" id="end-date" /><i class="fa fa-calendar"></i><input type="button" value="Borrow" />
+            </div>
+
+            <div class="bike-contact-owner">
+                <input type="button" value="Contact Owner" />
             </div>
         </section>
         
-        <section class="bike-comments-rating">
+        <section id="originalComments" class="bike-comments-rating">
             <div class="horizontal-line"></div>
             <article>
                 <div class="bike-comment-individual">
                     <h4>John Doe</h4>
                     <div class="bike-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+                        <i class="fa fa-star-o" style="color:#FFD700"></i>
                     </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
@@ -100,16 +155,48 @@
                 <div class="bike-comment-individual">
                     <h4>Jane Doe</h4>
                     <div class="bike-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+                        <i class="fa fa-star-o" style="color:#FFD700"></i>
                     </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
             </article>
         </section>
+		
+        <section id="testcomment" class="bike-comments-rating" hidden>
+            <div class="horizontal-line"></div>
+            <article>
+                <div class="bike-comment-individual">
+                    <h4>Emilio Weba</h4>
+                    <div class="bike-rating">
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+                        <i class="fa fa-star-o" style="color:#FFD700"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+            </article>
+            
+            <article>
+                <div class="bike-comment-individual">
+                    <h4>Jane Doe</h4>
+                    <div class="bike-rating">
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star" style="color:#FFD700"></i>
+                        <i class="fa fa-star-half-o" style="color:#FFD700"></i>
+                        <i class="fa fa-star-o" style="color:#FFD700"></i>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+            </article>
+        </section>
+		
     </main>
     <!-- document footer -->
     <footer>
@@ -123,5 +210,7 @@
             <a href="#">Twitter</a>
         </nav>
     </footer>
+	<script src="assets/scripts/jquery-2.1.4.min.js"></script>
+	<script src="assets/scripts/bikeDetails.js"></script>
 </body>
 </html>
