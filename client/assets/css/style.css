@@ -8,8 +8,7 @@ body {
   min-width: 436px;
   margin: 0 0 100px; /* bottom = footer height */
 	color: #1D0D8F;
-	background: #883AFF;
-	background-position: center center;
+    	background-position: center center;
 	background-repeat: none;
 	background-size: cover;
 	font-size: 17px;
@@ -118,12 +117,13 @@ header{
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  height: 100px;
-  width: 100%;
+      position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    background: #1D0D8F;
 }
 
 .container {
@@ -151,7 +151,14 @@ p{
 .login p {
   margin: 0px;
 }
+.bike-details p{
+  color: #404040;
+  text-align: left;
+}
 
+article p{
+  color: #404040;
+}
 .login input[type="submit"] {
   margin-top: 5px;
 }
@@ -239,7 +246,10 @@ section.search-form {
 #search-results {
 	width: 99.2vw;
 }
+.bike-main{
+  background: white;
 
+}
 /*Begin grid cell configuration*/
 #search-results .div-img {
   /* Just in case there are inline attributes */
@@ -476,8 +486,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 .bike-borrow-date {
   line-height: 12px;
   height: 14px;
-  font-size: 14px;
-  width: 80px !important;
+  font-size: 12px;
+  width: 100px !important;
 }
 
 .bike-dates i {
