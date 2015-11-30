@@ -5,11 +5,13 @@
     <title>Bicycle details - rideMyBike</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	
-	
-<style>
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<style>
+body{background-color: white;}
 </style>
+
 	
 </head>
 <body>
@@ -82,7 +84,9 @@
             </div>
 
             <div class="bike-dates">
-                <input type="date" id="start-date" class="bike-borrow-date" /><i class="fa fa-calendar"></i> <input type="date" class="bike-borrow-date" id="end-date" /><i class="fa fa-calendar"></i><input type="button" value="Borrow" />
+                <input type="date" id="start-date" class="bike-borrow-date" />
+				<i class="fa fa-calendar"></i> <input type="date" class="bike-borrow-date" id="end-date" />
+				<i class="fa fa-calendar"></i><input type="button" value="Borrow" />
             </div>
 
             <div class="bike-contact-owner">
@@ -211,6 +215,7 @@
         </nav>
     </footer>
 	<script src="assets/scripts/jquery-2.1.4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="assets/scripts/bikeDetails.js"></script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 $( document ).ready(function() {
- 
+	
  $('#testcomment').hide();
+ 
+ $(function() {
+   $( "#start-date,#end-date" ).datepicker();
+ });
+ 
  
 });
 
@@ -17,9 +22,5 @@ $('#previous').click(function(){
 	$('#testdetails').hide();
 		$('#originalComments').show();
 			$('#testcomment').hide();	
-			
-			$('.bxslider').bxSlider({
-			  mode: 'fade',
-			  captions: true
-			});
+
 });
