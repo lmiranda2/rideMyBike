@@ -257,7 +257,7 @@ section.search-form {
   margin: 5px 0px 0px 0px;
   position: relative;
   cursor: pointer;
-  //height: 250px;
+
 }
 
 #search-results:after {
@@ -271,20 +271,6 @@ section.search-form {
   margin: auto;
 }
 
-.blurry {
-  background-repeat: none;
-  background-size: cover;
-  -webkit-filter: brightness(80%) contrast(80%) blur(8px);
-  -moz-filter: brightness(80%) contrast(80%) blur(8px);
-  -ms-filter: brightness(80%) contrast(80%) blur(8px);
-  -o-filter: brightness(80%) contrast(80%) blur(8px);
-  filter: brightness(80%) contrast(80%) blur(8px);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
 .picture-container {
   display: inline-block;
 }
@@ -296,12 +282,12 @@ section.search-form {
 }
 
 .col {
-	width: 25vw;
+	width: 25%;
 	float: left;
 }
 
 @media (max-width: 1920px) {
-    .col { width: 33%; }
+    .col { width: 25%; }
 }
 
 @media (max-width: 1628px) {
@@ -337,7 +323,7 @@ button {
     border-color: #1D0D8F ;
     border-radius: 5px;
     outline: 0;
-    box-shadow: 1px 2px 4px #883aff;
+    //box-shadow: 1px 2px 4px #883aff;
         margin-top: 10px;
 }
 
@@ -357,7 +343,7 @@ input[type=submit] {
     border-color: #1D0D8F ;
     border-radius: 5px;
     outline: 0;
-    box-shadow: 1px 2px 4px #883aff;
+   // box-shadow: 1px 2px 4px #883aff;
         margin-top: 10px;
   }
 
@@ -376,7 +362,7 @@ input[type=text], input[type=password], input[type=date], input[type=search],sel
     border: 1px solid;
     border-color: #1D0D8F;
     border-radius: 5px;
-    box-shadow: 1px 2px 4px #883aff;
+    //box-shadow: 1px 2px 4px #883aff;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus, select:focus {
@@ -390,8 +376,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid gray;
-  width: 30vw;
-  height: 30vh;
+  width: 20vw;
+  height: 20vh;
 }
 
 .main-menu {
@@ -434,8 +420,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 
 /*Begin Star rating*/
 .rating-star{
-  width: 1.8vw;
-  height: 2.4vh;
+  width: 1.3vw;
+  height: 2vh;
 }
 .rating-bar {
   position: absolute;
@@ -586,7 +572,7 @@ select {
     border: 1px solid;
     border-color: #1D0D8F;
     border-radius: 5px;
-    box-shadow: 1px 2px 4px #883aff;
+    //box-shadow: 1px 2px 4px #883aff;
 }
 
 #picture {
@@ -625,5 +611,17 @@ select {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+#overlay {
+    width: 100%;
+    background: url('../img/opaque.png') repeat;
+    position: relative;
+}
+
+#overlay img.loading_circle {
+    position: absolute;
+    top: 50%;  // edit these values to give you
+    left: 50%; // the positioning you're looking for.
 }
 

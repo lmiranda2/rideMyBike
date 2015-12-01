@@ -1,14 +1,17 @@
 function rideMyBike() {
 	"use strict";
 
+	$( "#startDate" ).datepicker({ minDate: new Date()});
+	$( "#endDate" ).datepicker({ minDate: new Date()});
+
 	function performSearch() {
 		if (checkFormFields()) {
 			console.log('This info will be submitted to the server. The' +
 						' server will response with a json object containing' +
 						' all the available bicycles that match the criteria');
 			var filter = {
-				startDate: new Date($('#startDate').val()),
-				endDate: new Date($('#endDate').val()),
+				startDate: new Date($('#startDate').datepicker( "getDate" )),
+				endDate: new Date($('#endDate').datepicker( "getDate" )),
 				location: jsonPlace
 			};
 
@@ -48,7 +51,7 @@ function rideMyBike() {
 
 	function createBikes(response) {
 		var bicycles = response.data;
-		$('#search-results').empty();
+		$('#search-results > .div-img').remove();
 		for (var i=0; i<bicycles.length; i++) {
 			var bicycle = bicycles[i];
 
@@ -117,9 +120,9 @@ function rideMyBike() {
 
 	function checkFormFields() {
 		var location = $('#autocomplete');
-		var dates = $('.search-form input[type="date"]');
-		var pickup = $(dates[0]).val();
-		var dropoff = $(dates[1]).val();
+
+		var pickup = $('#startDate').datepicker( "getDate" );
+		var dropoff = $('#endDate').datepicker( "getDate" );
 
 		if (location.val() === "") {
 			alert("Please choose a location.");
@@ -152,6 +155,14 @@ function rideMyBike() {
 
 	initialRandomSearch();
 
+}
+
+function showLoading(){
+	$('#loading').show();
+}
+
+function hideLoading(){
+	$('#loading').hide();
 }
 
 $(document).ready(rideMyBike);

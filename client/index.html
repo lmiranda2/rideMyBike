@@ -6,7 +6,9 @@
     <meta name="description" content="Web platform for sharing bicycles around the country">
     <meta name="author" content="">
     <!-- css styles... -->
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
     <!-- document header -->
@@ -55,12 +57,12 @@
         
           <p><input type="text" id="username" name="username" value="" placeholder="Name"></p>
           <p><input type="text" id="email" name="email" placeholder="Email"></p>
-          <p><input type="text" id="password" name="password" value="" placeholder="Password"></p>
-          <p><input type="text" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
+          <p><input type="password" id="password" name="password" value="" placeholder="Password"></p>
+          <p><input type="password" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
           <p><input type="text" id="phone" name="phone" value="" placeholder="Phone"></p>
           <p><input type="text" id="address" name="address" value="" placeholder="Address"></p>
-          <p><input type="text" id="username" name="username" value="" placeholder="Address 2"></p>
-          <p><input type="text" id="username" name="username" value="" placeholder="City"></p>
+          <p><input type="text" id="address2" name="username" value="" placeholder="Address 2"></p>
+          <p><input type="text" id="city" name="username" value="" placeholder="City"></p>
           <p><select>
             <option value="" selected disabled>State</option>
             <option value="AL">Alabama</option>
@@ -115,7 +117,7 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select></p>
-          <p><input type="text" id="username" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
+          <p><input type="text" id="zipcode" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
           <input type="submit" name="register" value="Register">
         </form>
       </div>
@@ -134,20 +136,16 @@
                 <!-- note input -->
                 <section class="search-form">
                     <input id="autocomplete" type="search" placeholder="Location" required>
-                    <input type="date" id="startDate" required>
-                    <input type="date" id="endDate" required>
+                    <input type="text" id="startDate" required>
+                    <input type="text" id="endDate" required>
                     <button>Search</button>
-                    <input id="street_number" hidden="true">
-                    <input id="route" hidden="true">
-                    <input id="locality" hidden="true">
-                    <input id="administrative_area_level_1" hidden="true">
-                    <input id="postal_code" hidden="true">
-                    <input id="country" hidden="true">
+                 
                 </section>
             </div>
         </div>
         <!-- search results -->
         <section id="search-results" class="grid">
+            <div id="loading"><img src="../assets/img/loading_spinner.gif" class="loading_circle" alt="loading" /></div>
         </section>
     </main>
     <!-- document footer -->
@@ -167,7 +165,8 @@
     <!-- end of Remove - Mockup script -->
 
     <!-- js scripts... -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
     <script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async

@@ -47,7 +47,10 @@ module.exports = function (router, entities, responseWrapper, bookshelf)
         var endDate = filter.endDate;
         var location = filter.location;
 
-        var raw = 'SELECT *, ( 6371 * acos( cos( radians( ' + location.lat + ' ) ) * cos( radians( bikeLat ) ) * cos( radians( bikeLong ) - radians( ' + location.lng + ' ) ) + sin( radians( ' + location.lat + ' ) ) * sin( radians( bikeLat ) ) ) ) AS distance FROM Bike HAVING distance < 15';
+        var raw = 'SELECT Bike.*, ( 6371 * acos( cos( radians( ' + location.lat + ' ) ) * cos( radians( bikeLat ) ) * cos( radians( bikeLong ) - radians( ' + location.lng + ' ) ) + sin( radians( ' + location.lat + ' ) ) * sin( radians( bikeLat ) ) ) ) AS distance ' +
+            ' FROM Bike WHERE (SELECT COUNT(1) FROM BikeCalendar WHERE BikeCalendar.bikeId = Bike.bikeId AND (\'' + startDate + '\' BETWEEN BikeCalendar.bikeCalendarStart AND BikeCalendar.bikeCalendarEnd OR \'' + endDate + '\' BETWEEN BikeCalendar.bikeCalendarStart AND BikeCalendar.bikeCalendarEnd OR (\'' + startDate + '\' <= BikeCalendar.bikeCalendarStart AND \'' + endDate + '\' >= BikeCalendar.bikeCalendarEnd) ) ) = 0 HAVING distance < 15 ';
+
+        console.log(raw);
 
         bookshelf.knex.raw(raw).then(function(bikes){
             var collection = entities.Bike.collection();

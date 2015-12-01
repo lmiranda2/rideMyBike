@@ -17,20 +17,29 @@ function filterBicycle(filter, handlerDone, handlerFail) {
 
 // Base functions to communicate with the server.
 function getData(api){
+	showLoading();
+
 	return $.ajax({
 		type: 'GET',
 		url: api,
 		contentType: "application/json",
 		dataType: 'json'
+	}).always(function(){
+		hideLoading();
+		return arguments;
 	});
 }
 
 function postData(api, data){
+	showLoading();
 	return $.ajax({
 		type: 'POST',
 		url: api,
 		data: data,
 		contentType: "application/json",
 		dataType: 'json'
+	}).always(function(){
+		hideLoading();
+		return arguments;
 	});
 }
