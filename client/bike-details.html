@@ -5,11 +5,20 @@
     <title>Bicycle details - rideMyBike</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <style>
 body{background-color: white;}
+div#dialog-form { font-size: 62.5%; }
+
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+div#users-contain { width: 350px; margin: 20px 0; }
+div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
 </style>
 
 	
@@ -86,13 +95,33 @@ body{background-color: white;}
             <div class="bike-dates">
                 <input type="date" id="start-date" class="bike-borrow-date" />
 				<i class="fa fa-calendar"></i> <input type="date" class="bike-borrow-date" id="end-date" />
-				<i class="fa fa-calendar"></i><input type="button" value="Borrow" />
+				<i class="fa fa-calendar"></i>
+			<input type="button" value="Borrow" id="borrow-bike" style="height:2em;width:9em;font-size:14px;text-align:center;"/>
             </div>
 
             <div class="bike-contact-owner">
-                <input type="button" value="Contact Owner" />
-							
+                <input type="button" value="Contact Owner"  id="create-user" style="height:2em;width:9em;font-size:14px;text-align:center;"/>	
             </div>
+			
+			
+			<div id="dialog-form" title="Contact Bike Owner">
+			  <p class="validateTips">All form fields are required.</p>
+ 
+			  <form>
+			    <fieldset>
+			      <label for="name">Name</label>
+			      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+			      <label for="email">Email</label>
+			      <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+			      <label for="message">Message</label>
+				  <input type="text" name="message" id="message" value="Is your bike available ?" class="text ui-widget-content ui-corner-all">
+			      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+			      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			    </fieldset>
+			  </form>
+			</div>
+ 
+
         </section>
 		
         <section id="testdetails" class="bike-details" hidden>
@@ -115,7 +144,7 @@ body{background-color: white;}
                 <p><strong>Type :</strong> Road</p>
             </div>
             <div class="bike-model">
-                <p><strong>Model :</strong> 2013 Felt Compulsive</p>
+                <p><strong>Model :</strong>2013 Felt Compulsive</p>
             </div>
 
             <div class="bike-frame-size">
@@ -135,7 +164,7 @@ body{background-color: white;}
             </div>
 
             <div class="bike-contact-owner">
-                <input type="button" value="Contact Owner" />
+                <input type="button" value="Contact Owner"/>
             </div>
         </section>
         
@@ -197,7 +226,7 @@ body{background-color: white;}
                         <i class="fa fa-star-o" style="color:#FFD700"></i>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec, posuere semper orci.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae efficitur neque. Praesent cursus laoreet fringilla. Fusce fermentum tellus                      at lorem ultrices blandit. Sed eleifend commodo mauris at efficitur. Quisque posuere metus fermentum orci rhoncus lobortis. Mauris eu ligula sit                      amet dui vulputate suscipit. Maecenas orci ligula, vestibulum vel augue a, volutpat porttitor tortor. Duis massa tellus, facilisis eget augue nec,                    posuere semper orci.</p>
             </article>
         </section>
 		
