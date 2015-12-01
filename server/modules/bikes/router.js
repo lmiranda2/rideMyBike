@@ -1,7 +1,7 @@
 /**
  * Created by luiz on 11/24/2015.
  */
-module.exports = function (router, entities, responseWrapper)
+module.exports = function (router, entities, responseWrapper, bookshelf)
 {
     /*
     new entities.BikeImage(
@@ -33,11 +33,26 @@ module.exports = function (router, entities, responseWrapper)
         var bikeId = req.param("bikeId");
 
         var BikeImage = new entities.BikeImage({ 'bikeImageId': bikeimageId }).fetch().then(function(image){
-            console.log("Image", image);
             var filePath = 'images/' + bikeId + '/' + bikeimageId + '.' + image.get('bikeImageExtension');
             var img = fs.readFileSync(filePath);
             res.writeHead(200, {'Content-Type': 'image/' + image.bikeImageExtension });
             res.end(img, 'binary');
+        });
+    });
+
+    router.route('/bikes').post(function (req, res) {
+        var filter = req.body;
+
+        var startDate = filter.startDate;
+        var endDate = filter.endDate;
+        var location = filter.location;
+
+        var raw = 'SELECT *, ( 6371 * acos( cos( radians( ' + location.lat + ' ) ) * cos( radians( bikeLat ) ) * cos( radians( bikeLong ) - radians( ' + location.lng + ' ) ) + sin( radians( ' + location.lat + ' ) ) * sin( radians( bikeLat ) ) ) ) AS distance FROM Bike HAVING distance < 15';
+
+        bookshelf.knex.raw(raw).then(function(bikes){
+            var response = responseWrapper(true, '', '', bikes[0]);
+
+            res.json(response);
         });
     });
 };

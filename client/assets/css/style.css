@@ -279,6 +279,9 @@ section.search-form {
 	float: left;
 }
 
+@media (max-width: 1920px) {
+    .col { width: 33%; }
+}
 
 @media (max-width: 1628px) {
 	.col { width: 33%; }

@@ -40,32 +40,15 @@ app.use(morgan('dev'));
 var router = express.Router();
 
 /* CORE */
-//var requestFilter = require('./ArtistWagon/modules/filters/request.filter');
-//var headerFilter = require('./ArtistWagon/modules/filters/header.filter');
 var responseWrapper = require('./modules/core/response.wrapper');
 
 /* MODULES */
 var bikeRouter = require('./modules/bikes/router');
 
-//var activitytRouter = require('./ArtistWagon/modules/activities/router');
-
-//var transferRouter = require('./ArtistWagon/modules/transfers/router');
-
-// Add headers
+// Add CORS headers
 app.use(cors());
 
-//headerFilter(router);
-
-// load only the authentication module before the middleware.
-bikeRouter(router, entities, responseWrapper);
-
-// route middleware to verify a token.
-//requestFilter(router, fs, jwt, responseWrapper);
-
-// load all other modules.
-//activitytRouter(router, entities, responseWrapper);
-
-//transferRouter(router, entities, responseWrapper);
+bikeRouter(router, entities, responseWrapper, bookshelf);
 
 app.use('/api', router);
 

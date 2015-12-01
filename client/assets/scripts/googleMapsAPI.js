@@ -22,6 +22,8 @@ function initAutocomplete() {
 
 function createJSONPlace() {
   var place = autocomplete.getPlace();
+  jsonPlace = place.geometry.location.toJSON();
+  /*
   var json = '{';
   for (var i = 0; i < place.address_components.length; i++) {
     var addressType = place.address_components[i].types[0];
@@ -31,5 +33,7 @@ function createJSONPlace() {
       if (i < place.address_components.length-1) json += ', ';
     }
   }
-  jsonPlace = JSON.parse(json + '}');
+  //jsonPlace = JSON.parse(json + '}');
+  jsonPlace = json + '}';
+  */
 }
