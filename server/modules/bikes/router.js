@@ -50,9 +50,14 @@ module.exports = function (router, entities, responseWrapper, bookshelf)
         var raw = 'SELECT *, ( 6371 * acos( cos( radians( ' + location.lat + ' ) ) * cos( radians( bikeLat ) ) * cos( radians( bikeLong ) - radians( ' + location.lng + ' ) ) + sin( radians( ' + location.lat + ' ) ) * sin( radians( bikeLat ) ) ) ) AS distance FROM Bike HAVING distance < 15';
 
         bookshelf.knex.raw(raw).then(function(bikes){
-            var response = responseWrapper(true, '', '', bikes[0]);
+            var collection = entities.Bike.collection();
+            collection.add(bikes[0]);
+            collection.load('images').done(function(loaded){
+                var response = responseWrapper(true, '', '', loaded);
 
-            res.json(response);
+                res.json(response);
+            });
+
         });
     });
 };
