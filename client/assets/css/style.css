@@ -8,8 +8,7 @@ body {
   min-width: 436px;
   margin: 0 0 100px; /* bottom = footer height */
 	color: #1D0D8F;
-	background: #883AFF;
-	background-position: center center;
+    	background-position: center center;
 	background-repeat: none;
 	background-size: cover;
 	font-size: 17px;
@@ -17,11 +16,11 @@ body {
 }
 
 h1{
-  margin: 15px 0;
+  margin: 10px 10px 10px 10px;
 }
 
 header{
-	background-color: rgb(255, 255, 255);
+	background-color: #1D0D8F;
 	box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
 	color: rgb(117, 117, 117);
 	display: block;
@@ -118,12 +117,13 @@ header{
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  height: 100px;
-  width: 100%;
+      position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    background: #1D0D8F;
 }
 
 .container {
@@ -151,7 +151,14 @@ p{
 .login p {
   margin: 0px;
 }
+.bike-details p{
+  color: #404040;
+  text-align: left;
+}
 
+article p{
+  color: #404040;
+}
 .login input[type="submit"] {
   margin-top: 5px;
 }
@@ -176,10 +183,21 @@ p{
 }
 
 .login-help {
-  margin: 40px 0;
-  padding-top: 15px;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: bold;
   color: #1D0D8F;
+  text-align: center;
+      margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+
+}
+
+.align-right .login-help a {
+  text-align: center;
+    float: initial;
+    font-size: 12px;
+    font-weight: 100;
 }
 
 .content{
@@ -228,7 +246,10 @@ section.search-form {
 #search-results {
 	width: 99.2vw;
 }
+.bike-main{
+  background: white;
 
+}
 /*Begin grid cell configuration*/
 #search-results .div-img {
   /* Just in case there are inline attributes */
@@ -303,18 +324,18 @@ section.search-form {
 }
 
 button {
-  vertical-align: top;
-  height: 46px;
-  padding: 0 18px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #527881;
-  text-shadow: 0 1px #e3f1f1;
-  background: #cde5ef;
-  border: 1px solid;
-  border-color: #b4ccce #b3c0c8 #9eb9c2;
-  margin-bottom: -1px;
-  outline: 0;
+    padding: 0 18px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #1D0D8F ;
+    border: 1px solid;
+    border-color: #1D0D8F ;
+    border-radius: 5px;
+    outline: 0;
+    box-shadow: 1px 2px 4px #883aff;
+        margin-top: 10px;
 }
 
 button:active {
@@ -323,18 +344,16 @@ button:active {
 }
 
 input[type=submit] {
-    padding: 0 18px;
-    height: 29px;
-    font-size: 14px;
+   padding: 0 18px;
+    height: 35px;
+    font-size: 17px;
     font-weight: bold;
-    color: #1D0D8F;
-    text-shadow: 0 1.5px #883AFF;
-    background: #883AFF;
+    color: white;
+    background: #1D0D8F ;
     border: 1px solid;
-    border-color: #1D0D8F;
+    border-color: #1D0D8F ;
     border-radius: 5px;
     outline: 0;
-    float: right;
     box-shadow: 1px 2px 4px #883aff;
         margin-top: 10px;
   }
@@ -344,7 +363,7 @@ input[type=submit]:active {
   border-color: #9eb9c2 #b3c0c8 #b4ccce;
 }
 
-input[type=text], input[type=password], input[type=date], input[type=search] {
+input[type=text], input[type=password], input[type=date], input[type=search],select {
     margin: 3px;
     padding: 0 10px;
     width: 280px;
@@ -357,7 +376,7 @@ input[type=text], input[type=password], input[type=date], input[type=search] {
     box-shadow: 1px 2px 4px #883aff;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus, select:focus {
   border-color: #7dc9e2;
   outline-color: #dceefc;
   outline-offset: 0; // WebKit sets this to -1 by default
@@ -378,7 +397,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 .logo a {
-  color: rgb(117, 117, 117);
+  color: white;
+  font-weight: bold;
   float: left;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 10px 15px;
@@ -387,7 +407,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 
 .align-right a {
   box-sizing: border-box;
-  color: rgb(117, 117, 117);
+  color: white;
   float: right;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -466,8 +486,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 .bike-borrow-date {
   line-height: 12px;
   height: 14px;
-  font-size: 14px;
-  width: 80px !important;
+  font-size: 12px;
+  width: 100px !important;
 }
 
 .bike-dates i {
