@@ -20,15 +20,15 @@ h1{
 }
 
 header{
-	background-color: #1D0D8F;
+	background-color: #001f80;
 	box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
 	color: rgb(117, 117, 117);
 	display: block;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	height: 40px;
+	height: 60px;
 	position: relative;
-	width: 99.2vw;
+	width: 99.1vw;
 	left: 0;
 	right: 0;
 }
@@ -123,7 +123,7 @@ footer {
     text-align: center;
     height: 40px;
     width: 100%;
-    background: #1D0D8F;
+    border-top: 1px solid #1D0D8F;
 }
 
 .container {
@@ -218,7 +218,7 @@ main {
 	color: rgb(117, 117, 117);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  margin: 20px 15px;
+  margin: 10px 15px 5px 15px;
 }
 
 a {
@@ -244,7 +244,7 @@ section.search-form {
 }
 
 #search-results {
-	width: 99.2vw;
+	width: 99.1vw;
 }
 .bike-main{
   background: white;
@@ -352,7 +352,12 @@ input[type=submit]:active {
   border-color: #9eb9c2 #b3c0c8 #b4ccce;
 }
 
-input[type=text], input[type=password], input[type=date], input[type=search],select {
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=search],
+select {
     margin: 3px;
     padding: 0 10px;
     width: 280px;
@@ -381,6 +386,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 .main-menu {
+    margin-top: 15px;
   display: inline-flex;
   float: right;
 }
@@ -388,6 +394,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 .logo a {
   color: white;
   font-weight: bold;
+    font-size: large;
   float: left;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 10px 15px;
@@ -411,7 +418,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
   background-size: cover;
   background-position: center center;
   height: 400px;
-  width: 99.2vw;
+  width: 99.1vw;
   box-sizing: border-box;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -469,7 +476,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 
 .bike-main {
   display: inline-block;
-  width: 99.2vw;
+  width: 99.1vw;
 }
 
 .bike-borrow-date {
@@ -621,7 +628,21 @@ select {
 
 #overlay img.loading_circle {
     position: absolute;
-    top: 50%;  // edit these values to give you
-    left: 50%; // the positioning you're looking for.
+    top: 50%;
+    left: 50%;
 }
 
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+.primary{
+    float: right;
+}
+
+.error{
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}

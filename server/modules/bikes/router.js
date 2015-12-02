@@ -1,18 +1,8 @@
 /**
  * Created by luiz on 11/24/2015.
  */
-module.exports = function (router, entities, responseWrapper, bookshelf)
+module.exports = function (router, entities, responseWrapper, bookshelf, fs)
 {
-    /*
-    new entities.BikeImage(
-        {
-            bikeImageDescription: 'Dirt',
-            bikeImageData: '',
-            bikeImageMain: 1,
-            bikeId: 2
-        }).save();
-    */
-
     router.route('/bikes').get(function (req, res) {
         var Bike = entities.Bike;
 
@@ -22,12 +12,9 @@ module.exports = function (router, entities, responseWrapper, bookshelf)
 
                 res.json(response);
             });
-
     });
 
     router.route('/bikes/:bikeId/images/:imageId').get(function (req, res) {
-
-        var fs = require('fs');
 
         var bikeimageId = req.param("imageId");
         var bikeId = req.param("bikeId");
@@ -47,10 +34,9 @@ module.exports = function (router, entities, responseWrapper, bookshelf)
         var endDate = filter.endDate;
         var location = filter.location;
 
+        // TODO: Change to parameters to avoid SQL Injection
         var raw = 'SELECT Bike.*, ( 6371 * acos( cos( radians( ' + location.lat + ' ) ) * cos( radians( bikeLat ) ) * cos( radians( bikeLong ) - radians( ' + location.lng + ' ) ) + sin( radians( ' + location.lat + ' ) ) * sin( radians( bikeLat ) ) ) ) AS distance ' +
             ' FROM Bike WHERE (SELECT COUNT(1) FROM BikeCalendar WHERE BikeCalendar.bikeId = Bike.bikeId AND (\'' + startDate + '\' BETWEEN BikeCalendar.bikeCalendarStart AND BikeCalendar.bikeCalendarEnd OR \'' + endDate + '\' BETWEEN BikeCalendar.bikeCalendarStart AND BikeCalendar.bikeCalendarEnd OR (\'' + startDate + '\' <= BikeCalendar.bikeCalendarStart AND \'' + endDate + '\' >= BikeCalendar.bikeCalendarEnd) ) ) = 0 HAVING distance < 15 ';
-
-        console.log(raw);
 
         bookshelf.knex.raw(raw).then(function(bikes){
             var collection = entities.Bike.collection();

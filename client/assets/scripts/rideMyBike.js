@@ -9,6 +9,9 @@ function rideMyBike() {
 			console.log('This info will be submitted to the server. The' +
 						' server will response with a json object containing' +
 						' all the available bicycles that match the criteria');
+			var place = $('#autocomplete').getPlace();
+			jsonPlace = place.geometry.location.toJSON();
+
 			var filter = {
 				startDate: new Date($('#startDate').datepicker( "getDate" )),
 				endDate: new Date($('#endDate').datepicker( "getDate" )),

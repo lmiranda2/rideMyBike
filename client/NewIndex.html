@@ -1,0 +1,71 @@
+<html lang="en" ng-app="ridemybike">
+<head>
+    <title ng-bind="'Ride My Bike | ' + pageTitle"></title>
+    <base href="/">
+    <!-- css styles... -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
+    <meta name="viewport" content="initial-scale=1"/>
+</head>
+<body layout="column">
+
+<header class="header" header></header>
+<main ng-view></main>
+<footer class="footer" footer></footer>
+
+<!-- js scripts... -->
+<script type="text/javascript" src="assets/scripts/angular.min.js"></script>
+<script type="text/javascript" src="assets/scripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+<script src="assets/scripts/angular.min.js"></script>
+<script src="assets/scripts/angular-route.min.js"></script>
+<script src="assets/scripts/angular-cookies.min.js"></script>
+
+<script src="assets/scripts/underscore-min.js"></script>
+<script src="assets/scripts/angular-models.js"></script>
+
+<script type="application/javascript" src="assets/scripts/rmb.js"></script>
+
+<script type="application/javascript" src="assets/scripts/modules/core/module.core.js"></script>
+
+<script type="application/javascript" src="assets/scripts/modules/core/services/eventbus.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/storage.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/httpinterceptor.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/locationinterceptor.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/model/models.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/model/collection.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/fingerprint2.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/fingerprint.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/services/sha256.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/core/directives/modal.directive.js"></script>
+
+<script type="application/javascript" src="assets/scripts/modules/auth/module.auth.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/models/user.model.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/module.auth.routes.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/services/authentication.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/services/authorization.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/controllers/login.ctrl.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/directives/access.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/auth/module.auth.run.js"></script>
+
+<script type="application/javascript" src="assets/scripts/modules/shared/module.shared.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/shared/controllers/header.ctrl.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/shared/controllers/footer.ctrl.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/shared/controllers/notification.ctrl.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/shared/directives/shared.directive.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/shared/directives/notification.directive.js"></script>
+
+<script type="application/javascript" src="assets/scripts/modules/bike/module.bike.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/bike/model/bike.model.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/bike/model/bike.collection.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/bike/module.bike.routes.js"></script>
+<script type="application/javascript" src="assets/scripts/modules/bike/controllers/bike.ctrl.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places" async defer></script>
+
+<script type="application/javascript" src="assets/scripts/app.js"></script>
+
+</body>
+</html>

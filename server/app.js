@@ -1,13 +1,3 @@
-/**
- * Created by luiz on 11/23/2015.
- */
-
-//$sql = "SELECT *, ( 6371 * acos( cos( radians(" . $db->real_escape_string($lat) . ") ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(" . $db->real_escape_string($lng) . ") ) + sin( radians(" . $db->real_escape_string($lat) . ") ) * sin( radians( lat ) ) ) ) AS distance FROM your_table_name HAVING distance < 15";
-
-/*
- * Get the packages we need.
- */
-
 var express = require('express');
 var app = express();
 
@@ -40,15 +30,27 @@ app.use(morgan('dev'));
 var router = express.Router();
 
 /* CORE */
+
+var requestFilter = require('./modules/filters/request.filter');
+var headerFilter = require('./modules/filters/header.filter');
 var responseWrapper = require('./modules/core/response.wrapper');
 
 /* MODULES */
+var authenticationRouter = require('./modules/auth/router');
 var bikeRouter = require('./modules/bikes/router');
 
-// Add CORS headers
+// Add headers
 app.use(cors());
 
-bikeRouter(router, entities, responseWrapper, bookshelf);
+headerFilter(router);
+
+// load only the authentication module before the middleware.
+authenticationRouter(router, entities, jwt, forge, fs, responseWrapper);
+
+// route middleware to verify a token.
+//requestFilter(router, fs, jwt, responseWrapper);
+
+bikeRouter(router, entities, responseWrapper, bookshelf, fs);
 
 app.use('/api', router);
 
