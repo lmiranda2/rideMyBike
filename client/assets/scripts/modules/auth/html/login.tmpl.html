@@ -1,13 +1,15 @@
 <section class="login-container">
     <div>
+    <form method="post" action="index.html" name="loginForm" onsubmit="return(validateLogin());">
         <h1>Login to RideMyBike</h1>
         <div notification></div>
-        <input type="email" tabindex="1" name="login" placeholder="Email Address" required autofocus ng-model="loginModel.email"
-               ng-keyup="$event.keyCode == 13 && login()">
-        <input type="password" tabindex="2" name="password" placeholder="Password" required ng-model="loginModel.password"
+        <input type="email" tabindex="1" name="inlogin" placeholder="Insert Login" required autofocus ng-model="loginModel.email"
+               ng-keyup="$event.keyCode == 13 && login()" >
+        <input type="password" tabindex="2" name="inpassword" placeholder="Password" required ng-model="loginModel.password"
                ng-keyup="$event.keyCode == 13 && login()">
         <br />
-        <input type="submit" name="submit" tabindex="3" value="Login" class="primary" style="margin-bottom:20px;" ng-click="login()" />
+        <input type="submit" name="submit" tabindex="3" value="Login" class="primary" style="margin-bottom:20px;" ng-click="login()"/>
+        </form>
     </div>
 </section>
 
