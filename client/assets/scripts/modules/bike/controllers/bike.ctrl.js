@@ -8,6 +8,7 @@
             rmb.modules.bike.collection.bike,
             function ($scope, $location, BikeModel, BikeCollection) {
 
+                $scope.bikeModel = {};
                 $scope.data = {};
 
                 $("#startDate").datepicker({minDate: new Date()});
@@ -15,10 +16,17 @@
                 $("#autocomplete").focus();
 
                 $scope.search = function (e) {
-                    performSearch();
+                    if ($scope.bikeModel.$valid) {
+                        performSearch();
 
-                    $("#autocomplete").focus();
+                        $("#autocomplete").focus();
+                    }
+                    else {
+                        //if form is not valid set $scope.addContact.submitted to true
+                        $scope.bikeModel.submitted = true;
+                    }
                 };
+
 
                 //handle user event for keyboard press
                 $scope.locationKeyPress = function (e) {
@@ -46,7 +54,7 @@
                         var bikes = new BikeModel(filter);
                         bikes.save().then(function (response) {
 
-                            $scope.bikes = [].concat( response.data.data );
+                            $scope.bikes = [].concat(response.data.data);
                             createBikes($scope.bikes);
                         });
                     }
@@ -81,7 +89,7 @@
                     var bikes = new BikeCollection();
                     bikes.fetch().then(function (response) {
 
-                        $scope.bikes = [].concat( response.data.data );
+                        $scope.bikes = [].concat(response.data.data);
                         createBikes($scope.bikes);
                     });
                 })();

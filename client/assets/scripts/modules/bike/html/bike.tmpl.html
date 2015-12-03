@@ -3,9 +3,9 @@
         <h1>Find a bicycle to borrow</h1>
         <!-- note input -->
         <section class="search-form">
-            <input id="autocomplete" type="search" placeholder="Location"  ng-keypress="locationKeyPress($event)" required>
-            <input type="text" id="startDate" ng-model="data.startDate" placeholder="Pickup Date" required>
-            <input type="text" id="endDate" ng-model="data.endDate" placeholder="Dropoff Date" required>
+            <input id="autocomplete" type="search" placeholder="Location" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.location"  ng-keypress="locationKeyPress($event)" required>
+            <input type="text" id="startDate" ng-model="data.startDate" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.startDate" placeholder="Pickup Date" required>
+            <input type="text" id="endDate" ng-model="data.endDate" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.endDate" placeholder="Dropoff Date" required>
             <button ng-click="search()">Search</button>
 
         </section>

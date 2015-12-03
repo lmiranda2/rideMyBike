@@ -33,6 +33,12 @@
                     $scope.modalLoginShown = !$scope.modalLoginShown;
                 };
 
+                $scope.modalSignUpShown = false;
+                $scope.toggleModalSignUp = function(e) {
+                    e.preventDefault();
+                    $scope.modalSignUpShown = !$scope.modalSignUpShown;
+                };
+
                 $scope.show = function () {
                     return true;// !$location.path().startsWith('/login');
                 };

@@ -11,100 +11,16 @@
 
         <a ng-hide="showUser" ng-click='toggleModalLogin($event)'>Login</a>
 
-        <a  ng-hide="showUser" href="#openModal">Sign up</a>
+        <a ng-hide="showUser" ng-click='toggleModalSignUp($event)'>Sign Up</a>
 
-        <div id="openModal" class="modalDialog">
-            <div><a href="#close" title="Close" class="close">X</a>
-
-                <h1>Sign Up</h1>
-
-                <div class="form-class">
-                    <form method="post" action="">
-                        <input type="file" multiple id="composer-photo" accept="image/*"
-                               onchange="handlePictures(this.files)">
-
-                        <p><input type="text" id="username" name="username" value="" placeholder="Name"></p>
-
-                        <p><input type="text" id="email" name="email" placeholder="Email"></p>
-
-                        <p><input type="password" id="password" name="password" value="" placeholder="Password"></p>
-
-                        <p><input type="password" id="confpassword" name="confpassword" value=""
-                                  placeholder="Confirm Password"></p>
-
-                        <p><input type="text" id="phone" name="phone" value="" placeholder="Phone"></p>
-
-                        <p><input type="text" id="address" name="address" value="" placeholder="Address"></p>
-
-                        <p><input type="text" id="address2" name="address2" value="" placeholder="Address 2"></p>
-
-                        <p><input type="text" id="city" name="city" value="" placeholder="City"></p>
-
-                        <p><select>
-                            <option value="" selected disabled>State</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select></p>
-                        <p><input type="text" id="zipcode" name="username" pattern="[0-9]{5}(-[0-9]{4})?"
-                                  placeholder="Zip Code"></p>
-                        <input type="submit" name="register" value="Register">
-                    </form>
-                </div>
-            </div>
-        </div>
         <a href="#">How it Works</a>
     </div>
 </nav>
 
 <modal-dialog show='modalLoginShown' width='306px' height='220px'>
     <div id="login" ng-controller="login.ctrl" ng-include src="'assets/scripts/modules/auth/html/login.tmpl.html'" ></div>
+</modal-dialog>
+
+<modal-dialog show='modalSignUpShown' width='400px' height='550px'>
+    <div id="signup" ng-controller="signup.ctrl" ng-include src="'assets/scripts/modules/user/html/signup.tmpl.html'" ></div>
 </modal-dialog>

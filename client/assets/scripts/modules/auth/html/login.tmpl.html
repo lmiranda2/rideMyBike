@@ -2,9 +2,9 @@
     <div>
         <h1>Login to RideMyBike</h1>
         <div notification></div>
-        <input type="email" tabindex="1" name="login" placeholder="Email Address" required autofocus ng-model="loginModel.email"
+        <input type="email" ng-class="{submitted:loginModel.submitted}" tabindex="1" name="login" placeholder="Email Address" required="" autofocus ng-model="loginModel.email"
                ng-keyup="$event.keyCode == 13 && login()">
-        <input type="password" tabindex="2" name="password" placeholder="Password" required ng-model="loginModel.password"
+        <input type="password" ng-class="{submitted:loginModel.submitted}" tabindex="2" ng-minlength="4" name="password" placeholder="Password" required="" ng-model="loginModel.password"
                ng-keyup="$event.keyCode == 13 && login()">
         <br />
         <input type="submit" name="submit" tabindex="3" value="Login" class="primary" style="margin-bottom:20px;" ng-click="login()" />

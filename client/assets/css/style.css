@@ -646,3 +646,9 @@ select {
     color: #FFFFFF;
     margin-bottom: 5px;
 }
+
+input.submitted.ng-invalid,
+select.submitted.ng-invalid
+{
+    border:1px solid #f00;
+}
