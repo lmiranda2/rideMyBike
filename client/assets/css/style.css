@@ -725,5 +725,5 @@ select.submitted.ng-invalid {
 #originalDetails div{
     margin: 15px auto;
 }
-div.columns       { width: 100%; }
-div.columns div   { width: 25%; height: 100%; float: left; text-align: center; }
+div.columns       { width: 100%; background-image:"../img/bicycle-wallpaper-4.jpg"; }
+div.columns div   { width: 25%; height: 100%; float: left; text-align: center; margin-top: 60px; }
