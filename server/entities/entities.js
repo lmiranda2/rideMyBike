@@ -5,6 +5,9 @@ module.exports = function(database){
     var User = database.Model.extend({
         tableName: 'User',
         idAttribute: 'userId',
+        reviews: function(){
+            return this.belongsToMany(Review, 'userId');
+        },
         hidden: ['userPassword', 'userSalt', 'userIsActive']
     });
 

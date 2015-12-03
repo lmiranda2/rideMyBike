@@ -23,6 +23,8 @@ module.exports = function (router, entities, responseWrapper, bookshelf, fs) {
             .then(function (bike) {
                 var response = responseWrapper(true, '', '', bike);
 
+                console.log(bike.get("reviews"));
+
                 res.json(response);
             });
     });

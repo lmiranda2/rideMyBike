@@ -17,7 +17,7 @@
     }).run(function ($rootScope, $templateCache, $location) {
 
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            $rootScope.pageTitle = current.$$route.pageTitle || '';
+            $rootScope.pageTitle = current.$$route !== undefined ? current.$$route.pageTitle || '' : '';
         });
 
         //This function is only used to disable template caching during development. We can probably disable or figure out

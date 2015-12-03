@@ -296,7 +296,16 @@ section.search-form {
     margin: 10px 30px 5px 25px;
     padding: 5px;
     background-color: #d7e3f1;
+    opacity: 0.7; /* css standard */
+    filter: alpha(opacity=70); /* internet explorer */
 }
+
+.picture-container:hover {
+    opacity: 1; /* css standard */
+    filter: alpha(opacity=100); /* internet explorer */
+}
+
+
 
 /*End grid cell configuration*/
 
@@ -711,4 +720,8 @@ select.submitted.ng-invalid {
 
 .bike-rating a{
     margin-right: 0;
+}
+
+#originalDetails div{
+    margin: 15px auto;
 }
