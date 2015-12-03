@@ -3,9 +3,12 @@
         <h1>Find a bicycle to borrow</h1>
         <!-- note input -->
         <section class="search-form">
-            <input id="autocomplete" type="search" placeholder="Location" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.location"  ng-keypress="locationKeyPress($event)" required>
-            <input type="text" id="startDate" ng-model="data.startDate" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.startDate" placeholder="Pickup Date" required>
-            <input type="text" id="endDate" ng-model="data.endDate" ng-class="{submitted:bikeModel.submitted}" ng-model="bikeModel.endDate" placeholder="Dropoff Date" required>
+            <input id="autocomplete" type="search" placeholder="Location" ng-class="{submitted:bikeModel.submitted}"
+                   ng-model="bikeModel.location" ng-keypress="locationKeyPress($event)" required>
+            <input type="text" id="startDate" ng-model="data.startDate" ng-class="{submitted:bikeModel.submitted}"
+                   ng-model="bikeModel.startDate" placeholder="Pickup Date" required>
+            <input type="text" id="endDate" ng-model="data.endDate" ng-class="{submitted:bikeModel.submitted}"
+                   ng-model="bikeModel.endDate" placeholder="Dropoff Date" required>
             <button ng-click="search()">Search</button>
 
         </section>
@@ -13,5 +16,10 @@
 </div>
 <!-- search results -->
 <section id="search-results" class="grid">
+    <div ng-repeat="bike in bikes" class="div-img col" ng-click="redirect('bike/' + bike.bikeId);">
+        <div class="picture-container">
+            <div ng-bind-html="createRatingStars(bike)"></div>
 
+            <img class="thumb" ng-src="{{returnImageUrl(bike)}}"></div>
+    </div>
 </section>

@@ -1,0 +1,18 @@
+<section class="login-container">
+    <div class="form-class">
+        <h1>Contact Owner</h1>
+
+        <input type="text" name="name" id="name" required ng-class="{submitted:contact.submitted}" ng-model="contact.Name" placeholder="Name">
+        <input type="email" name="email" id="email" required ng-class="{submitted:contact.submitted}" ng-model="contact.Email" placeholder="E-mail">
+        <input type="text" name="message" id="message" required ng-class="{submitted:contact.submitted}" ng-model="contact.Message" placeholder="Message">
+
+        <div class="bike-dates">
+            <input type="text" placeholder="Pickup" id="start-date" required ng-class="{submitted:contact.submitted}" ng-model="contact.Pickup" class="bike-borrow-date"/>
+            <i class="fa fa-calendar"></i>
+            <input type="text" placeholder="Dropoff" required ng-class="{submitted:contact.submitted}" ng-model="contact.Dropoff" class="bike-borrow-date" id="end-date"/>
+            <i class="fa fa-calendar"></i>
+        </div>
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" class="primary" ng-click="submit()" tabindex="-1">
+    </div>
+</section>

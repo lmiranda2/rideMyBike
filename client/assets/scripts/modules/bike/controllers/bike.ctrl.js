@@ -4,9 +4,10 @@
     angular.module(rmb.modules.bike.name).controller(rmb.modules.bike.controllers.bike,
         ['$scope',
             '$location',
+            '$sce',
             rmb.modules.bike.model.bike,
             rmb.modules.bike.collection.bike,
-            function ($scope, $location, BikeModel, BikeCollection) {
+            function ($scope, $location, $sce, BikeModel, BikeCollection) {
 
                 $scope.bikeModel = {};
                 $scope.data = {};
@@ -60,110 +61,127 @@
                     }
                 }
 
-                function returnImageUrl(bikeId, imageId) {
-                    return rmb.modules.core.api + 'bikes/' + bikeId + '/images/' + imageId;
+                $scope.returnImageUrl = function (bike) {
+
+                    var mainImage = $.grep(bike.images, function (image) {
+                        return image.bikeImageMain.data[0] === 1;
+                    })[0];
+
+                    return rmb.modules.core.api + 'bikes/' + bike.bikeId + '/images/' + mainImage.bikeImageId;
                 }
 
-                function createRatingStars(rating, div) {
+                $scope.createRatingStars = function (bike) {
+
+                    var rating = bike.bikeRating;
+                    var div = '';
                     var fullStars = parseInt(rating);
                     var hasHalfStar = (rating % 1) > 0.25;
 
+                    div += '<strong class="rating-bar-bike-nickname">'+ bike.bikeNickname + '</strong>';
+
+                    div += '<a class="rating-bar">';
+
                     for (var i = 0; i < fullStars; i++) {
-                        $(div).append('<img class="rating-star" src="/assets/img/Star-Full.png" />')
+                        div += '<img class="rating-star" src="/assets/img/Star-Full.png" />';
                     }
 
                     var remainingStars = 5 - fullStars;
 
                     if (hasHalfStar) {
-                        $(div).append('<img class="rating-star" src="/assets/img/Star-Half-Full.png" />')
+                        div += '<img class="rating-star" src="/assets/img/Star-Half-Full.png" />';
                         remainingStars--;
                     }
 
                     for (var i = 0; i < remainingStars; i++) {
-                        $(div).append('<img class="rating-star" src="/assets/img/Star-Empty.png" />')
+                        div += '<img class="rating-star" src="/assets/img/Star-Empty.png" />';
                     }
 
+                    div += '</a>';
+
+                    return $sce.trustAsHtml(div);
                 }
 
-                (function initialRandomSearch() {
+                $scope.initialRandomSearch = function () {
                     var bikes = new BikeCollection();
                     bikes.fetch().then(function (response) {
-
                         $scope.bikes = [].concat(response.data.data);
-                        createBikes($scope.bikes);
                     });
-                })();
+                };
 
-                function createBikes(bicycles) {
+                $scope.initialRandomSearch();
 
-                    $('#search-results > .div-img').remove();
-                    for (var i = 0; i < bicycles.length; i++) {
-                        var bicycle = bicycles[i];
+                /*
 
-                        var $bicycleDiv = $('<div/>');
-                        $bicycleDiv.addClass('div-img col');
+                 function createBikes(bicycles) {
 
-                        var mainImage = $.grep(bicycle.images, function (image) {
-                            return image.bikeImageMain.data[0] === 1;
-                        })[0];
+                 $('#search-results > .div-img').remove();
+                 for (var i = 0; i < bicycles.length; i++) {
+                 var bicycle = bicycles[i];
 
-                        // Bicycle picture begin
-                        var $imgDiv = $('<div/>');
-                        $imgDiv.addClass('picture-container');
-                        var $img = $('<img class="thumb"/>');
-                        $img.attr('src', returnImageUrl(bicycle.bikeId, mainImage.bikeImageId));
-                        $img.on('click', createClickHandler(bicycle.id));
-                        // Bicycle picture end
+                 var $bicycleDiv = $('<div/>');
+                 $bicycleDiv.addClass('div-img col');
 
-                        // Rating stars begin
-                        var rating = Math.round((parseInt(bicycle.bikeRating) / 10) * 100);
+                 var mainImage = $.grep(bicycle.images, function (image) {
+                 return image.bikeImageMain.data[0] === 1;
+                 })[0];
 
-                        var $ratingBarDiv = $('<div/>');
-                        $ratingBarDiv.addClass('rating-bar');
-                        createRatingStars(bicycle.bikeRating, $ratingBarDiv);
-                        var $ratingDiv = $('<div/>');
-                        $ratingDiv.appendTo($ratingBarDiv);
-                        // Rating stars end
+                 // Bicycle picture begin
+                 var $imgDiv = $('<div/>');
+                 $imgDiv.addClass('picture-container');
+                 var $img = $('<img class="thumb"/>');
+                 $img.attr('src', $scope.returnImageUrl(bicycle.bikeId, mainImage.bikeImageId));
+                 //$img.on('click', redirect('bicycle.id));
+                 // Bicycle picture end
 
-                        $ratingBarDiv.appendTo($imgDiv);
-                        $img.appendTo($imgDiv);
+                 // Rating stars begin
+                 var rating = Math.round((parseInt(bicycle.bikeRating) / 10) * 100);
 
-                        // Bicycle information begin
-                        var $nickname = $('<span></span>');
-                        $nickname.text(bicycle.nickname);
+                 var $ratingBarDiv = $('<div/>');
+                 $ratingBarDiv.addClass('rating-bar');
+                 createRatingStars(bicycle.bikeRating, $ratingBarDiv);
+                 var $ratingDiv = $('<div/>');
+                 $ratingDiv.appendTo($ratingBarDiv);
+                 // Rating stars end
 
-                        var $type = $('<span></span>');
-                        $type.text(bicycle.type);
+                 $ratingBarDiv.appendTo($imgDiv);
+                 $img.appendTo($imgDiv);
 
-                        var $model = $('<span></span>');
-                        $model.text(bicycle.model);
+                 // Bicycle information begin
+                 var $nickname = $('<span></span>');
+                 $nickname.text(bicycle.nickname);
 
-                        var $frameSize = $('<span></span>');
-                        $frameSize.text(bicycle.frameSize);
+                 var $type = $('<span></span>');
+                 $type.text(bicycle.type);
 
-                        var $wheelSize = $('<span></span>');
-                        $wheelSize.text(bicycle.wheelSize);
+                 var $model = $('<span></span>');
+                 $model.text(bicycle.model);
+
+                 var $frameSize = $('<span></span>');
+                 $frameSize.text(bicycle.frameSize);
+
+                 var $wheelSize = $('<span></span>');
+                 $wheelSize.text(bicycle.wheelSize);
 
 
-                        var $canDeliver = $('<span></span>');
-                        $canDeliver.text(bicycle.canDeliver);
-                        // Bicycle information end
+                 var $canDeliver = $('<span></span>');
+                 $canDeliver.text(bicycle.canDeliver);
+                 // Bicycle information end
 
-                        var $captionDiv = $('<div/>');
-                        // $nickname.appendTo($captionDiv);
-                        // $tanDeliver.appendTo($captionDiv);
-                        $imgDiv.appendTo($bicycleDiv);
-                        // $captionDiv.appendTo($bicycleDiv);
+                 var $captionDiv = $('<div/>');
+                 // $nickname.appendTo($captionDiv);
+                 // $tanDeliver.appendTo($captionDiv);
+                 $imgDiv.appendTo($bicycleDiv);
+                 // $captionDiv.appendTo($bicycleDiv);
 
-                        $('#search-results').append($bicycleDiv);
-                    }
-                }
+                 $('#search-results').append($bicycleDiv);
+                 }
+                 }
 
-                function createClickHandler(id) {
-                    return function () {
-                        location.href = 'bike-details.html?id=' + id;
-                    };
-                }
+                 function createClickHandler(id) {
+                 return redirect('bike/' + id);
+                 }
+
+                 */
 
                 function checkFormFields(location, startDate, endDate) {
 
@@ -180,18 +198,18 @@
                 }
 
                 $scope.initAutocomplete = function () {
-                    // Create the autocomplete object, restricting the search to geographical
-                    // location types.
                     $scope.autocomplete = new google.maps.places.Autocomplete(
                         document.getElementById('autocomplete'),
                         {types: ['geocode']});
-
-                    // When the user selects an address from the dropdown, create an JSON object
-                    //  that will be sent to the server in order to perform the database search.
-                    //$scope.autocomplete.addListener('place_changed', $scope.createJSONPlace);
                 };
 
                 $scope.initAutocomplete();
+
+                $scope.redirect = function (next) {
+                    if (next) {
+                        $location.path(next);
+                    }
+                };
 
                 $scope.bikes = [];
 

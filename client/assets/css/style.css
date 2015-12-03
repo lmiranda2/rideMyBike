@@ -1,36 +1,36 @@
 html {
-  position: relative;
-  min-height: 100%;
-  overflow-y: scroll;
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
 }
 
 body {
-  min-width: 436px;
-  margin: 0 0 100px; /* bottom = footer height */
-	color: #1D0D8F;
-    	background-position: center center;
-	background-repeat: none;
-	background-size: cover;
-	font-size: 17px;
-	font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+    min-width: 436px;
+    margin: 0 0 100px; /* bottom = footer height */
+    color: #1D0D8F;
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+    font-size: 17px;
+    font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
 }
 
-h1{
-  margin: 10px 10px 10px 10px;
+h1 {
+    margin: 10px 10px 10px 10px;
 }
 
-header{
-	background-color: #001f80;
-	box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
-	color: rgb(117, 117, 117);
-	display: block;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	height: 60px;
-	position: relative;
-	width: 99.1vw;
-	left: 0;
-	right: 0;
+header {
+    background-color: #001f80;
+    box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
+    color: rgb(117, 117, 117);
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 60px;
+    position: relative;
+    width: 99.1vw;
+    left: 0;
+    right: 0;
 }
 
 .modalDialog {
@@ -42,16 +42,18 @@ header{
     left: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
-    opacity:0;
+    opacity: 0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
+
 .modalDialog:target {
-    opacity:1;
+    opacity: 1;
     pointer-events: auto;
 }
+
 .modalDialog > div {
     width: 380px;
     position: relative;
@@ -63,6 +65,7 @@ header{
     background: -webkit-linear-gradient(#fff, #999);
     background: -o-linear-gradient(#fff, #999);
 }
+
 .modalDialogLogin {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
@@ -72,16 +75,18 @@ header{
     left: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
-    opacity:0;
+    opacity: 0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
+
 .modalDialogLogin:target {
-    opacity:1;
+    opacity: 1;
     pointer-events: auto;
 }
+
 .modalDialogLogin > div {
     width: 310px;
     position: relative;
@@ -112,12 +117,13 @@ header{
     -webkit-box-shadow: 1px 1px 3px #000;
     box-shadow: 1px 1px 3px #000
 }
+
 .close:hover {
     background: #00d9ff;
 }
 
 footer {
-      position: absolute;
+    position: absolute;
     left: 0;
     bottom: 0;
     text-align: center;
@@ -127,40 +133,43 @@ footer {
 }
 
 .container {
-  margin: 80px auto;
-  width: 640px;
+    margin: 80px auto;
+    width: 640px;
 }
 
 .login {
-  display: inline-block;
-  position: relative;
-  top: 150px;
-  width: 311px;
-  height: 220px;
-  padding: 10px;
-  border: 1px solid gray;
-  background-color: white;
+    display: inline-block;
+    position: relative;
+    top: 150px;
+    width: 311px;
+    height: 220px;
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: white;
 }
 
-p{
+p {
 
     margin-bottom: 5px;
     margin-top: 5px;
 
 }
+
 .login p {
-  margin: 0px;
-}
-.bike-details p{
-  color: #404040;
-  text-align: left;
+    margin: 0px;
 }
 
-article p{
-  color: #404040;
+.bike-details p {
+    color: #404040;
+    text-align: left;
 }
+
+article p {
+    color: #404040;
+}
+
 .login input[type="submit"] {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .login input[type="submit"]:hover {
@@ -168,78 +177,78 @@ article p{
 }
 
 .remember_me label {
-  float: left;
-  margin-top: 10px;
-  font-size: 12px;
-  color: #777;
-  cursor: pointer;
+    float: left;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+    cursor: pointer;
 }
 
 .remember_me input {
-  position: relative;
-  bottom: 1px;
-  margin-right: 4px;
-  vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    margin-right: 4px;
+    vertical-align: middle;
 }
 
 .login-help {
-  font-size: 13px;
-  font-weight: bold;
-  color: #1D0D8F;
-  text-align: center;
-      margin-top: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #1D0D8F;
+    text-align: center;
+    margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 5px;
 
 }
 
 .align-right .login-help a {
-  text-align: center;
+    text-align: center;
     float: initial;
     font-size: 12px;
     font-weight: 100;
 }
 
-.content{
-	position: relative;
-	margin: 0 auto;
-	padding: 20px;
-	background: white;
-	border-radius: 3px
+.content {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 3px
 }
 
 /* site main content category */
 main {
-  text-align: center;
+    text-align: center;
 }
 
 .footer-nav {
-	/*padding-top: 5px;*/
-	color: rgb(117, 117, 117);
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  margin: 10px 15px 5px 15px;
+    /*padding-top: 5px;*/
+    color: rgb(117, 117, 117);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 10px 15px 5px 15px;
 }
 
 a {
-	color: rgb(117, 117, 117);
-	text-decoration: none;
-	margin-right: 10px;
+    color: rgb(117, 117, 117);
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 a:visited {
-	color: rgb(117, 117, 117);
-	text-decoration: none;
+    color: rgb(117, 117, 117);
+    text-decoration: none;
 }
 
 section.search-form {
-  
-padding-bottom: 0px;
+
+    padding-bottom: 0px;
     padding-right: 50px;
     padding-left: 40px;
     margin-right: 0px;
     margin-top: 0px;
-    border-radius: 0;
+    border-radius: 6px;
     /* position: relative; */
     height: 60px;
     background: rgba(209, 224, 241, 0.71);
@@ -247,76 +256,94 @@ padding-bottom: 0px;
 }
 
 #autocomplete {
-	width: 400px;
+    width: 400px;
 }
 
 #search-results {
-	width: 99.1vw;
+    width: 99.1vw;
 }
-.bike-main{
-  background: white;
+
+.bike-main {
+    background: white;
 
 }
+
 /*Begin grid cell configuration*/
 #search-results .div-img {
-  /* Just in case there are inline attributes */
-  display: inline-block;
-  margin: 5px 0px 0px 0px;
-  position: relative;
-  cursor: pointer;
+    /* Just in case there are inline attributes */
+    display: inline-block;
+    margin: 5px 0px 0px 0px;
+    position: relative;
+    cursor: pointer;
 
 }
 
 #search-results:after {
-	clear:both;
-	content:"";
-	display:block;
+    clear: both;
+    content: "";
+    display: block;
 }
 
 .search-area {
-  position: relative;
-  margin: auto;
+    position: relative;
+    margin: auto;
 }
 
 .picture-container {
-  display: inline-block;
+    border-radius: 4px;
+    border: 1px solid gray;
+    display: inline-block;
+    margin: 10px 30px 5px 25px;
+    padding: 5px;
+    background-color: #d7e3f1;
 }
+
 /*End grid cell configuration*/
 
 /*Begin grid configuration*/
 .grid {
-	margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .col {
-	width: 25%;
-	float: left;
+    width: 25%;
+    float: left;
 }
 
 @media (max-width: 1920px) {
-    .col { width: 25%; }
+    .col {
+        width: 25%;
+    }
 }
 
 @media (max-width: 1628px) {
-	.col { width: 33%; }
+    .col {
+        width: 33%;
+    }
 }
+
 @media (max-width: 1300px) {
-  .col { width: 33%; }
+    .col {
+        width: 33%;
+    }
 }
+
 @media (max-width: 720px) {
- 	.col { width: 50%; }
+    .col {
+        width: 50%;
+    }
 }
 
 /*End grid configuration*/
 
 :-moz-placeholder {
-	color: #c9c9c9 !important;
-	font-size: 17px;
+    color: #c9c9c9 !important;
+    font-size: 17px;
 }
 
 ::-webkit-input-placeholder {
-	color: #ccc;
-	font-size: 17px;
+    color: #ccc;
+    font-size: 17px;
 }
 
 button {
@@ -325,38 +352,38 @@ button {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background: #1D0D8F ;
+    background: #1D0D8F;
     border: 1px solid;
-    border-color: #1D0D8F ;
+    border-color: #1D0D8F;
     border-radius: 5px;
     outline: 0;
-    //box-shadow: 1px 2px 4px #883aff;
-        margin-top: 10px;
+/ / box-shadow : 1 px 2 px 4 px #883aff;
+    margin-top: 10px;
 }
 
 button:active {
-  background: #cde5ef;
-  border-color: #9eb9c2 #b3c0c8 #b4ccce;
+    background: #cde5ef;
+    border-color: #9eb9c2 #b3c0c8 #b4ccce;
 }
 
 input[type=submit] {
-   padding: 0 18px;
+    padding: 0 18px;
     height: 35px;
     font-size: 17px;
     font-weight: bold;
     color: white;
-    background: #1D0D8F ;
+    background: #1D0D8F;
     border: 1px solid;
-    border-color: #1D0D8F ;
+    border-color: #1D0D8F;
     border-radius: 5px;
     outline: 0;
-   // box-shadow: 1px 2px 4px #883aff;
-        margin-top: 10px;
-  }
+/ / box-shadow : 1 px 2 px 4 px #883aff;
+    margin-top: 10px;
+}
 
 input[type=submit]:active {
-  background: #cde5ef;
-  border-color: #9eb9c2 #b3c0c8 #b4ccce;
+    background: #cde5ef;
+    border-color: #9eb9c2 #b3c0c8 #b4ccce;
 }
 
 input[type=text],
@@ -374,210 +401,206 @@ select {
     border: 1px solid;
     border-color: #1D0D8F;
     border-radius: 5px;
-    //box-shadow: 1px 2px 4px #883aff;
+/ / box-shadow : 1 px 2 px 4 px #883aff;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=search]:focus, select:focus {
-  border-color: #7dc9e2;
-  outline-color: #dceefc;
-  outline-offset: 0; // WebKit sets this to -1 by default
+    border-color: #7dc9e2;
+    outline-color: #dceefc;
+    outline-offset: 0;
+/ / WebKit sets this to - 1 by default
 }
 
 .thumb {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid gray;
-  width: 20vw;
-  height: 20vh;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+
+    width: 20vw;
+    height: 20vh;
 }
 
 .main-menu {
     margin-top: 15px;
-  display: inline-flex;
-  float: right;
+    display: inline-flex;
+    float: right;
 }
 
 .logo a {
-  color: white;
-  font-weight: bold;
+    color: white;
+    font-weight: bold;
     font-size: large;
-  float: left;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 10px 15px;
+    float: left;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 10px 15px;
 }
-
 
 .align-right a {
-  box-sizing: border-box;
-  color: white;
-  float: right;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  list-style-image: none;
-  list-style-position: outside;
-  list-style-type: none;
-  margin: 10px 15px;
+    box-sizing: border-box;
+    color: white;
+    float: right;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 10px 15px;
 }
 
-.back-image{
-  background-image: url("../img/bicycle-wallpaper-4.jpg");
-  background-size: cover;
-  background-position: center center;
-  height: 400px;
-  width: 99.1vw;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  display: inline-flex;
+.back-image {
+    background-image: url("../img/bicycle-wallpaper-4.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    width: 99.1vw;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    display: inline-flex;
 }
 
 /*Begin Star rating*/
-.rating-star{
-  width: 1.3vw;
-  height: 2vh;
+.rating-star {
+    width: 1.3vw;
+    height: 2vh;
 }
+
 .rating-bar {
-  position: absolute;
-  float: right;
-  /*this class creats 5 stars bar with empty stars */
-  /*each star is 16 px, it means 5 stars will make 80px together */
-  //width: 80px;
-  /*height of empty star*/
-  //height: 16px;
-  /*background image with stars */
-  //background: url(../img/stars.png);
-  /*which will be repeated horizontally */
-  //background-repeat: repeat-x;
-  /* as we are using sprite image, we need to position it to use right star, 
-  //0 0 is for empty */
-  background-position: 0 0;
-  /* align inner div to the left */
-  text-align: left;
+    float: right;
+    margin-right: 0;
 }
-.rating {
-  /* height of full star is the same, we won't specify width here */
-  height: 16px;
-  /* background image with stars */
-  background: url(../img/stars.png);
-  /* now we will position background image to use 16px from top, 
-  //which means use full stars */
-  background-position: 0 -16px;
-  /* and repeat them horizontally */
-  background-repeat: repeat-x;
-}
+
 /*End Star rating*/
 
 /* Bike Details*/
+
+.rating-bar-bike-nickname {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
 .bike-images {
-  float: left;
-  width: 48vw;
-  min-height: 60vh;
+    float: left;
+    width: 48vw;
+    min-height: 60vh;
 }
 
 .bike-details {
-  float: right;
-  width: 48vw;
-  min-height: 60vh;
+    float: right;
+    width: 48vw;
+    min-height: 60vh;
 }
 
 .bike-main {
-  display: inline-block;
-  width: 99.1vw;
+    display: inline-block;
+    width: 99.1vw;
 }
 
 .bike-borrow-date {
-  line-height: 12px;
-  height: 14px;
-  font-size: 12px;
-  width: 100px !important;
+    line-height: 12px;
+    height: 14px;
+    font-size: 12px;
+    width: 135px !important;
 }
 
 .bike-dates i {
-  margin-left: 5px;
-  margin-right: 15px;
+    margin-left: 0px;
+    margin-right: 10px;
 }
 
-.bike-contact-owner{
-  margin-top: 15px;
+.bike-contact-owner {
+    margin-top: 15px;
 }
 
-.bike-images-current{
-  width: 80%;
-  height: 40vh;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid gray;
-  margin: 30px auto;
-  background-image: url("mocks/img/road_01.jpg");
-  background-repeat: no-repeat;
-  /* as we are using sprite image, we need to position it to use right star, 
-  //0 0 is for empty */
-  background-position: 0 0;
+.bike-images-current {
+    width: 80%;
+    height: 40vh;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 2px solid gray;
+    margin: 30px auto;
 }
 
-.bike-images-galery-thumb{
-  width: 20%;
-  height: 10vh;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid gray;
-  margin: 5px;
-  display:inline-block;
-  margin: auto;
+.bike-images-current-arrow-left {
+    background-image: url("../img/arrow-left.png");
+    background-size: auto;
+    display: inline;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.bike-images-current-arrow-left {
+    background-image: url("../img/arrow-right.png");
+    background-size: cover;
+    display: inline;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.bike-images-galery-thumb {
+    width: 20%;
+    height: 10vh;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 2px solid gray;
+    margin: 5px;
+    display: inline-block;
+    margin: auto;
 }
 
 .bike-images-galery i {
-  vertical-align: middle;
-  margin-bottom: 10vh;
+    vertical-align: middle;
+    margin-bottom: 10vh;
 }
 
-.bike-comments-rating{
-  display:inline-block;
-  margin: 30px;
+.bike-comments-rating {
+    display: inline-block;
+    margin: 30px;
 }
 
 .bike-comments-rating h4, i {
-  text-align: left;
-  margin: 0;
+    text-align: left;
+    margin: 0;
 }
 
 .bike-comment-individual {
-  text-align: left; 
+    text-align: left;
 }
 
 .horizontal-line {
-  border-top: 2px solid black;
-  margin-bottom: 20px;
+    border-top: 2px solid black;
+    margin-bottom: 20px;
 }
 
 .form-class {
-  width: 350px;
-  display: inline-block;
-  padding: 10px;
+    width: 350px;
+    display: inline-block;
+    padding: 10px;
 }
 
 .form-class input, select, textarea {
-  width: 100%;
-  resize: vertical;
-  font-size: 12px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    width: 100%;
+    resize: vertical;
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .form-class :-moz-placeholder {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .form-class ::-webkit-input-placeholder {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 select {
-  
+
     margin: 2px;
     padding: 0 10px;
     height: 34px;
@@ -586,45 +609,45 @@ select {
     border: 1px solid;
     border-color: #1D0D8F;
     border-radius: 5px;
-    //box-shadow: 1px 2px 4px #883aff;
+/ / box-shadow : 1 px 2 px 4 px #883aff;
 }
 
 #picture {
-  text-align: left;
+    text-align: left;
 }
 
 #pictures {
-  text-align: left;
-  padding-left: 1px;
-  padding-right: 1px;
-  white-space:nowrap;
-  width: 100%;
-  height: 100px;
-  overflow: scroll;
-  overflow-x: scroll;
-  overflow-y: hidden;
+    text-align: left;
+    padding-left: 1px;
+    padding-right: 1px;
+    white-space: nowrap;
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .thumb-register {
-  background: url("../img/plus.gif");
-  text-align: center;
-  display: inline-block;
-  height: 80px;
-  width: 80px;
-  border: 1px dashed;
+    background: url("../img/plus.gif");
+    text-align: center;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    border: 1px dashed;
 }
 
 .thumb-register:hover {
-  border: 2px dashed #86becb; 
-  color: #86becb;
-  cursor: pointer;
+    border: 2px dashed #86becb;
+    color: #86becb;
+    cursor: pointer;
 }
 
 #composer-photo {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #overlay {
@@ -645,17 +668,47 @@ select {
     cursor: pointer;
 }
 
-.primary{
+.primary {
     float: right;
 }
 
-.error{
+.error {
     color: #FFFFFF;
     margin-bottom: 5px;
 }
 
 input.submitted.ng-invalid,
-select.submitted.ng-invalid
-{
-    border:1px solid #f00;
+select.submitted.ng-invalid {
+    border: 1px solid #f00;
+}
+
+.user-review{
+    text-align: left;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #1D0D8F;
+}
+
+#slides_control > div{
+    height: 200px;
+}
+.slider-img{
+    margin:auto;
+    width: 400px;
+}
+#slides_control {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    top:20px;
+    margin-left:-200px;
+}
+
+.arrow{
+   height: 5vh;
+    width: 3vw;
+}
+
+.bike-rating a{
+    margin-right: 0;
 }

@@ -5,10 +5,7 @@
 	[ rmb.modules.core.models.model,
 		function(Modelrmb){
 		  var result = Modelrmb.extend({
-			urlRoot: function() 
-				{ 
-					return  rmb.modules.core.api + rmb.modules.bike.api;
-				}()
+			urlRoot:  rmb.modules.core.api + rmb.modules.bike.api
 		  });
 		
 		  return result;

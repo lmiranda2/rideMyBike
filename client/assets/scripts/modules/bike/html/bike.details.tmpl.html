@@ -1,0 +1,66 @@
+<section class="bike-images">
+
+    <div class="slide" ng-repeat="image in bike.images" ng-show="image.active">
+        <img class="bike-images-current" ng-src="{{returnImageUrl(image)}}"/>
+    </div>
+    <a href="#" ng-click="prev($event)">
+        <img src="/assets/img/arrow-left.png" class="arrow">
+    </a>
+    <a href="#" ng-click="next($event)">
+        <img src="/assets/img/arrow-right.png" class="arrow">
+    </a>
+
+</section>
+<section id="originalDetails" class="bike-details">
+
+    <span id="bikeId" hidden>12</span>
+
+    <div class="bike-nickname">
+        <h2>
+            <i class="fa fa-bicycle fa-1x"></i>
+            {{bike.bikeNickname}}
+        </h2>
+    </div>
+    <div class="bike-rating" ng-bind-html="createRatingStars(bike.bikeRating)"></div>
+
+    <div class="bike-type">
+        <p><strong>Type :</strong> {{bike.type.bikeTypeDescription}}</p>
+    </div>
+    <div class="bike-model">
+        <p><strong>Model :</strong> {{bike.bikeModel}}</p>
+    </div>
+
+    <div class="bike-frame-size">
+        <p><strong>Frame Size: </strong> {{bike.bikeFrameSize}}</p>
+    </div>
+
+    <div class="bike-wheel-size">
+        <p><strong>Wheel Size: </strong> {{bike.bikeWheelSize}}</p>
+    </div>
+
+    <div class="bike-description">
+        <p><strong>Description: </strong> {{bike.bikeDescription}}</p>
+    </div>
+
+    <div class="bike-contact-owner">
+        <input type="submit" ng-click="toggleModalContact($event)" value="Contact Owner" id="create-user"/>
+    </div>
+
+
+    <modal-dialog show='modalContactShown' width='395px' height='340px'>
+        <div id="contact-owner" ng-controller="bike.contact.owner.ctrl" ng-include src="'assets/scripts/modules/bike/html/bike.contact.owner.tmpl.html'" ></div>
+    </modal-dialog>
+
+</section>
+
+<section id="originalComments" class="bike-comments-rating">
+    <div class="horizontal-line"></div>
+    <article class="user-review" ng-repeat="review in bike.reviews">
+        <div class="bike-comment-individual">
+            <h4>{{review.user.userFirstName}} {{review.user.userLastName}}</h4>
+
+            <div class="bike-rating" ng-bind-html="createRatingStars(review.bikeReviewRating)"></div>
+        </div>
+        <p>{{review.bikeReviewText}}</p>
+    </article>
+</section>

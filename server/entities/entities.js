@@ -1,8 +1,11 @@
 module.exports = function(database){
 
+    database.plugin('visibility');
+
     var User = database.Model.extend({
         tableName: 'User',
-        idAttribute: 'userId'
+        idAttribute: 'userId',
+        hidden: ['userPassword', 'userSalt', 'userIsActive']
     });
 
     var Bike = database.Model.extend({
@@ -16,6 +19,9 @@ module.exports = function(database){
         },
         images: function(){
             return this.hasMany(BikeImage, 'bikeId');
+        },
+        reviews: function(){
+            return this.hasMany(BikeReview, 'bikeId');
         }
     });
 
@@ -34,11 +40,20 @@ module.exports = function(database){
         idAttribute: 'bikeCalendarId'
     });
 
+    var BikeReview = database.Model.extend({
+        tableName: 'BikeReview',
+        idAttribute: 'bikeReviewId',
+        user: function(){
+            return this.hasOne(User, 'userId');
+        }
+    });
+
     return {
         User : User,
         Bike : Bike,
         BikeType : BikeType,
         BikeImage : BikeImage,
-        BikeCalendar : BikeCalendar
+        BikeCalendar : BikeCalendar,
+        BikeReview: BikeReview
     }
 };

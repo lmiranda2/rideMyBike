@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>rideMyBike - Where you can ride by sharing</title>
+    <meta name="description" content="Web platform for sharing bicycles around the country">
+    <meta name="author" content="">
+    <!-- css styles... -->
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+    <!-- document header -->
+    <header>
+        <div class="logo">
+            <a href="#" class="align-left">rideMyBike</a>
+        </div>
+        <!-- document nav -->
+        <nav class="main-menu">
+            <div class="align-right">
+                <a href="#openModalLogin">Login</a>
+                    <div id="openModalLogin" class="modalDialogLogin">
+                        <div>   <a href="#closeLogin" title="Close" class="close">X</a>
+
+
+                                <h1>Login to RideMyBike</h1>
+          <form method="post" action="index.html">
+            <input type="text" name="login" value="" placeholder="Username or Email" />
+            <input type="password" name="password" value="" placeholder="Password" />
+
+            <p class="remember_me">
+              <label>
+                <input type="checkbox" name="remember_me" id="remember_me">
+                Remember me on this computer
+              </label>
+            </p>
+            <input type="submit" name="submit" value="Login">
+          <div class="login-help">
+            <p>Forgot your password?</p>
+            <a href="#">Click here to reset it</a>
+          </div>
+          </form>
+
+                                  </div>
+                    </div>
+
+
+
+                <a href="#openModal">Sign up</a>
+                    <div id="openModal" class="modalDialog">
+                        <div>   <a href="#close" title="Close" class="close">X</a>
+                            <h1>Sign Up</h1>
+      <div class="form-class">
+        <form method="post" action="">
+        <input type="file" multiple id="composer-photo" accept="image/*" onchange="handlePictures(this.files)">
+
+          <p><input type="text" id="username" name="username" value="" placeholder="Name"></p>
+          <p><input type="text" id="email" name="email" placeholder="Email"></p>
+          <p><input type="password" id="password" name="password" value="" placeholder="Password"></p>
+          <p><input type="password" id="confpassword" name="confpassword" value="" placeholder="Confirm Password"></p>
+          <p><input type="text" id="phone" name="phone" value="" placeholder="Phone"></p>
+          <p><input type="text" id="address" name="address" value="" placeholder="Address"></p>
+          <p><input type="text" id="address2" name="username" value="" placeholder="Address 2"></p>
+          <p><input type="text" id="city" name="username" value="" placeholder="City"></p>
+          <p><select>
+            <option value="" selected disabled>State</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select></p>
+          <p><input type="text" id="zipcode" name="username" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="Zip Code"></p>
+          <input type="submit" name="register" value="Register">
+        </form>
+      </div>
+                        </div>
+                    </div>
+                <a href="#">How it Works</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- document main -->
+    <main>
+        <div class="back-image">
+            <div class="search-area">
+                <h1>Find a bicycle to borrow</h1>
+                <!-- note input -->
+                <section class="search-form">
+                    <input id="autocomplete" type="search" placeholder="Location" required>
+                    <input type="text" id="startDate" required>
+                    <input type="text" id="endDate" required>
+                    <button>Search</button>
+
+                </section>
+            </div>
+        </div>
+        <!-- search results -->
+        <section id="search-results" class="grid">
+            <div id="loading"><img src="../assets/img/loading_spinner.gif" class="loading_circle" alt="loading" /></div>
+        </section>
+    </main>
+    <!-- document footer -->
+    <footer>
+        <nav class="footer-nav">
+            <a href="login.html">Login</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="user-registration.html">Sign Up</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">How it Works</a>
+            <strong>|&nbsp;&nbsp;</strong>
+            <a href="#">Twitter</a>
+        </nav>
+    </footer>
+<!-- Remove - Mockup script -->
+    <script type="text/javascript" src="assets/scripts/mockup.js"></script>
+    <!-- end of Remove - Mockup script -->
+
+    <!-- js scripts... -->
+    <script type="text/javascript" src="assets/scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/rideMyBike.js"></script>
+    <script type="text/javascript" src="assets/scripts/googleMapsAPI.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async
+            defer></script>
+</body>
+</html>
