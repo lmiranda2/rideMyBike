@@ -233,10 +233,17 @@ a:visited {
 }
 
 section.search-form {
-  padding: 2px;
-  padding-bottom: 100px;
-  margin-left: 5px;
-  border-radius: 0;
+  
+padding-bottom: 0px;
+    padding-right: 50px;
+    padding-left: 40px;
+    margin-right: 0px;
+    margin-top: 0px;
+    border-radius: 0;
+    /* position: relative; */
+    height: 60px;
+    background: rgba(209, 224, 241, 0.71);
+    /*width: 100%; */
 }
 
 #autocomplete {
@@ -414,7 +421,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, inpu
 }
 
 .back-image{
-  background-image: url("../img/background1.jpg");
+  background-image: url("../img/bicycle-wallpaper-4.jpg");
   background-size: cover;
   background-position: center center;
   height: 400px;
