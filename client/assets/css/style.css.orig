@@ -722,8 +722,11 @@ select.submitted.ng-invalid {
     margin-right: 0;
 }
 
+<<<<<<< HEAD
 #originalDetails div{
     margin: 15px auto;
 }
+=======
 div.columns       { width: 100%; }
 div.columns div   { width: 25%; height: 100%; float: left; text-align: center; }
+>>>>>>> 574428761cd1409ecf964f4fd3ec8d796958cd6b

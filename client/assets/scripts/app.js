@@ -12,6 +12,7 @@
         , rmb.modules.shared.name
         , rmb.modules.bike.name
         , rmb.modules.user.name
+        , rmb.modules.info.name
     ]).config(function ($locationProvider) {
         $locationProvider.html5Mode(false);
     }).run(function ($rootScope, $templateCache, $location) {

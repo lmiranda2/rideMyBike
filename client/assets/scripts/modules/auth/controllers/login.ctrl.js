@@ -21,7 +21,7 @@
                     })['finally'](function () {
                         $scope.isBusy = false;
                     });
-             
+
             };
         }
     ]);
