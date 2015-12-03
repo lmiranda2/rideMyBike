@@ -712,3 +712,6 @@ select.submitted.ng-invalid {
 .bike-rating a{
     margin-right: 0;
 }
+
+div.columns       { width: 100%; }
+div.columns div   { width: 25%; height: 100%; float: left; text-align: center; }
